@@ -21,6 +21,7 @@ class MainComponent extends Component {
         // })
         this.props.fetchProducts()
     }
+    
 
     
     render() {

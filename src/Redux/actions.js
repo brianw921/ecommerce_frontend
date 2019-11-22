@@ -52,9 +52,9 @@ export const fetchProducts = () => {
     }
 }
 
-export const handleSortMen = (productsList) => {
+export const handleAnySort = (sortCategory) => {
     return (dispatch) => {
-        dispatch({type: "PRODUCT_LIST", payload: productsList})
+        dispatch({type: "SORT_CATEGORY", payload: sortCategory})
     }
 }
 
