@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ProductContainer from './ProductContainer'
 import FilterBar from './FilterBar'
+import NavBar from './NavBar'
 
 export default class MainComponent extends Component {
     state = {
@@ -19,10 +20,11 @@ export default class MainComponent extends Component {
 
     render() {
         return (
-            <div>
-                <h1>hi</h1>
-                <ProductContainer products={this.state.products}/>
+            <div style={{border: "1px black solid"}}>
+                <h1>Product Container</h1>
+                <NavBar />
                 <FilterBar />
+                <ProductContainer products={this.state.products}/>
             </div>
         )
     }
