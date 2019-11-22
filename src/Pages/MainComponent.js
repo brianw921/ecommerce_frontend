@@ -24,7 +24,7 @@ class MainComponent extends Component {
 
     
     render() {
-        console.log(this.props.products)
+        
         return (
             <div style={{border: "1px black solid"}}>
                 <NavBar />

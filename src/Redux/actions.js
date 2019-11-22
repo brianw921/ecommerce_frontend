@@ -52,4 +52,10 @@ export const fetchProducts = () => {
     }
 }
 
+export const handleSortMen = (productsList) => {
+    return (dispatch) => {
+        dispatch({type: "PRODUCT_LIST", payload: productsList})
+    }
+}
+
 

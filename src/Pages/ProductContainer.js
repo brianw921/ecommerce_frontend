@@ -6,10 +6,10 @@ import { connect } from 'react-redux';
 
     
     render() {
-        console.log("hello", this.props.products)
+        // console.log("hello", this.props.products)
         return (
             <div id="product-container">
-
+                
                 
                 {this.props.products.map((product) => {
                     return <ProductCard key={product.id}
