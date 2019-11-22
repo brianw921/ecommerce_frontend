@@ -21,10 +21,12 @@ export default class MainComponent extends Component {
     render() {
         return (
             <div style={{border: "1px black solid"}}>
-                <h1>Product Container</h1>
                 <NavBar />
-                <FilterBar />
-                <ProductContainer products={this.state.products}/>
+
+                <div style={{"display": 'flex'}}>
+                    <FilterBar />
+                    <ProductContainer products={this.state.products}/>
+                </div>
             </div>
         )
     }

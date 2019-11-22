@@ -5,7 +5,7 @@ import Category from './Category'
 export default class FilterBar extends Component {
     render() {
         return (
-            <div style={{border: "1px black solid"}}>
+            <div id="filter-bar">
                 <hi>I'm filter Bar</hi>
                 <Sort />
                 <Category />

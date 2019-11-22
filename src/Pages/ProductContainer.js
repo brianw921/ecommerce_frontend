@@ -6,7 +6,7 @@ export default class ProductContainer extends Component {
     
     render() {
         return (
-            <div>
+            <div id="product-container">
                 {this.props.products.map((product) => {
                     return <ProductCard product={product}/>
                 }
