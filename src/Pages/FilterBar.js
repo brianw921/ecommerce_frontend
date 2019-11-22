@@ -6,7 +6,7 @@ export default class FilterBar extends Component {
     render() {
         return (
             <div id="filter-bar">
-                <hi>I'm filter Bar</hi>
+                <h1>I'm filter Bar</h1>
                 <Sort />
                 <Category />
             </div>

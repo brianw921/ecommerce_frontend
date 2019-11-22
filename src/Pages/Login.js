@@ -45,9 +45,11 @@ class Login extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    getUser: (loginData) => dispatch(getUser(loginData))
-})
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getUser: (loginData) => dispatch(getUser(loginData))
+    }
+}
 
 // function mapDispatchToProps(dispatch){
 //     return {

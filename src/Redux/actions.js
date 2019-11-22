@@ -40,3 +40,16 @@ export const getUser = (user) => {
     }
 }
 
+export const fetchProducts = () => {
+    return (dispatch) => {
+        return fetch('http://localhost:3000/items')
+        .then(r => r.json())
+        .then((data) => {
+            // console.log(data)
+           dispatch({type: "PRODUCT_LIST", payload: data})
+        }
+        )
+    }
+}
+
+
