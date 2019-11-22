@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ProductContainer from './ProductContainer'
+import FilterBar from './FilterBar'
 
 export default class MainComponent extends Component {
     state = {
@@ -15,12 +16,13 @@ export default class MainComponent extends Component {
             })
         })
     }
-    
+
     render() {
         return (
             <div>
                 <h1>hi</h1>
                 <ProductContainer products={this.state.products}/>
+                <FilterBar />
             </div>
         )
     }
