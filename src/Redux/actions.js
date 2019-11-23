@@ -58,4 +58,6 @@ export const handleAnySort = (sortCategory) => {
     }
 }
 
+//set action that will handle dispatch for product card
+//get click function going to get the card the show and create and order. 
 
