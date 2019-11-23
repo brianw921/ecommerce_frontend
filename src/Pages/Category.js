@@ -14,7 +14,7 @@ class Category extends Component {
         
     // }
     render() {
-        console.log("Category", this.props.products)
+        // console.log("Category", this.props.products)
         return (
             <div>
                 <h1>Sort by category</h1>

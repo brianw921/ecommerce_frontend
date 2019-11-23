@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
              let sorted = category.filter((item) => {
                  return item.category === this.props.sortCategory
              })
-             console.log(sorted)
+            //  console.log(sorted)
              return sorted
         }
     }

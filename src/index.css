@@ -33,3 +33,7 @@ code {
   width: 30%;
   border: black solid;
 }
+
+#search-bar {
+  height: 30%;
+}
