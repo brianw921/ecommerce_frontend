@@ -9,15 +9,16 @@ class ProductShowCard extends Component {
         orderPopup: false
     }
     orderPopup = () => {
-        console.log("i have been clicked")
+        // console.log("i have been clicked")
         this.setState({
             orderPopup: !this.state.orderPopup
         })
         this.props.addToCart(this.props.showProduct)
     }
     render() {
+       
        if (this.state.orderPopup) {
-           return <OrderPopup showProduct={this.props.showProduct}/>
+           return <OrderPopup showProduct={this.props.showProduct} history={this.props.history}/>
        }
 
         const { product_full_name ,image, description_headline,

@@ -8,6 +8,7 @@ import ProductShowPage from './Pages/ProductShowPage'
 import NavBar from './Pages/NavBar'
 import FilterBar from './Pages/FilterBar'
 import OrderPopup from './Pages/OrderPopup'
+import Cart from './Pages/Cart'
 
 
 class App extends React.Component {
@@ -24,6 +25,7 @@ class App extends React.Component {
               <Route path="/login" component={Login} />
               <Route path="/items/:id" component={ProductShowPage}/>
               <Route path="/items/:id/addtoCart" component={OrderPopup}/>
+              <Route path='/cart' component={Cart}/>
           </Switch>
       </div>
   );

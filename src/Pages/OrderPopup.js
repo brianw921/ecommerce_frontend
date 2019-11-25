@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 
 class OrderPopup extends Component {
 
-    // viewCart = () => {
-    //     console.log("view CArt")
-    //     this.props.addToCart(this.props.showProduct)
-    // }
+    viewCart = () => {
+        console.log("view CArt")
+        this.props.history.push('/cart')
+    }
     render() {
         console.log("OrderPopup",this.props)
         const { product_full_name ,image, description_headline,

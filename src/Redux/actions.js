@@ -77,6 +77,18 @@ export const addToCart = (item) => {
     }
 }
 
+export const submitOrder = (orderObj) => {
+    return (dispatch) => {
+        return fetch("http://localhost:3000/orders", {
+            method: "POST",
+            headers: { "content-type": "application/json", accept: "application/json"},
+            body: JSON.stringify({order: orderObj})
+        })
+        .then(r => r.json())
+        .then(console.log)
+    }
+}
+
 //set action that will handle dispatch for product card
 //get click function going to get the card the show and create and order. 
 
