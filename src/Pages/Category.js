@@ -4,23 +4,17 @@ import { handleAnySort } from '../Redux/actions'
 
 class Category extends Component {
 
-    // handleSortMen = () => {
-    //     let category = this.props.products
-    //     let sorted =category.filter( (items) => {
-    //         return items.category === "men"
-    //     }
-    //     )
-    //     console.log(sorted)
-        
-    // }
+   
     render() {
         // console.log("Category", this.props.products)
+        //DONT FORGET TO MAKE A SORT
         return (
             <div>
                 <h1>Sort by category</h1>
-                <h1 onClick={() => this.props.setSortedCategory("")}>ALL</h1>
-                <h1 onClick={() => this.props.setSortedCategory("men")}>MENS</h1>
-                <h1 onClick={() => this.props.setSortedCategory("women")}>WOMENS</h1>
+                <h1 onClick={() => this.props.setSortGender("")}>ALL</h1>
+                <h1 onClick={() => this.props.setSortGender("M")}>MENS</h1>
+                <h1 onClick={() => this.props.setSortGender("W")}>WOMENS</h1>
+                <h1 onClick={() => this.props.setSortGender("K")}>KIDS</h1>
             </div>
         )
     }
@@ -34,7 +28,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setSortedCategory: (sortCategory) => dispatch(handleAnySort(sortCategory)),
+        setSortGender: (sortGender) => dispatch(handleAnySort(sortGender)),
        
     }
 }

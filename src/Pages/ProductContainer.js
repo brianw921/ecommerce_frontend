@@ -2,35 +2,34 @@ import React, { Component } from 'react'
 import ProductCard from './ProductCard.js'
 import { connect } from 'react-redux';
 
+ 
+
  class ProductContainer extends Component {
     
     
-
-    
     sortProducts = () => {
-        if (this.props.sortCategory === "") {
+        if (this.props.sortGender === "") {
             return this.props.products
         } else {
              let category = this.props.products
              let sorted = category.filter((item) => {
-                 return item.category === this.props.sortCategory
+                 
+                 return item.gender === this.props.sortGender
              })
             //  console.log(sorted)
              return sorted
         }
     }
-    
    
     render() {
         
-        // console.log("hello", this.props.products)
+    // console.log(this.props)
         return (
             <div id="product-container">
-                
-                
                 {this.sortProducts().map((product) => {
                     return <ProductCard key={product.id}
-                                        product={product}/>
+                                        product={product}
+                                        history = {this.props.history}/>
                 }
                 )}
             </div>
@@ -41,7 +40,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
     return {
         products: state.productStore.products,
-        sortCategory: state.productStore.sortCategory
+        sortGender: state.productStore.sortGender
     }
 }
 

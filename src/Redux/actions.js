@@ -52,9 +52,28 @@ export const fetchProducts = () => {
     }
 }
 
-export const handleAnySort = (sortCategory) => {
+export const handleAnySort = (sortGender) => {
     return (dispatch) => {
-        dispatch({type: "SORT_CATEGORY", payload: sortCategory})
+        dispatch({type: "SORT_GENDER", payload: sortGender})
+    }
+}
+
+export const showProduct = (item) => {
+    return (dispatch) => {
+        return fetch(`http://localhost:3000/items/${item.id}`)
+        .then(r => r.json())
+        .then( (item) => {
+            console.log("hgjhghjk",item)
+            dispatch({type: "SHOW_PRODUCT", payload: item})
+            
+        })
+        
+    }
+}
+
+export const addToCart = (item) => {
+    return (dispatch) => {
+        dispatch({type: "ADD_TO_CART", payload: item})
     }
 }
 

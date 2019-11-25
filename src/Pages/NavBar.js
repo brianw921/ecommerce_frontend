@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 
 class NavBar extends Component {
 
@@ -11,15 +12,22 @@ class NavBar extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-        console.log(this.state)
+    }
+
+    redirectMainComponent = () => {
+        console.log("IM GOING HOME")
+        this.props.history.push('/')
     }
 
     render() {
-        console.log(this.props)
+        // console.log("what is the nav bar", this.props)
         const { search } = this.state
         return (
             
-            <div id="nav-bar">
+            <div id="nav-bar" >
+                    <Link to = "/">
+                    < img alt="logo" src ="https://hips.hearstapps.com/esq.h-cdn.co/assets/16/52/1600x800/landscape-1483042503-es-161229-adidas-4.jpg?resize=480:*" />
+                    </Link>
                   <h1>This is nav bar, should have search/login/& cart</h1>
                   <input id="search-bar" 
                         placeholder="search"

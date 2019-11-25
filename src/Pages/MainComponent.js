@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import ProductContainer from './ProductContainer'
-import FilterBar from './FilterBar'
-import NavBar from './NavBar'
+
 import { connect } from 'react-redux';
 import { fetchProducts } from '../Redux/actions';
 
@@ -25,14 +24,14 @@ class MainComponent extends Component {
 
     
     render() {
-        
+        console.log(this.props.history)
         return (
             <div style={{border: "1px black solid"}}>
-                <NavBar />
+                
 
                 <div style={{"display": 'flex'}}>
-                    <FilterBar />
-                    <ProductContainer />
+                    
+                    <ProductContainer history={this.props.history} />
                 </div>
             </div>
         )

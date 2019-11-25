@@ -16,11 +16,12 @@ code {
   display: flex;
   justify-content: space-evenly;
   background-color: grey;
+  border: 1px black solid;
 }
 
-/* #filter-bar {
-
-} */
+#filter-bar {
+  width: 20%;
+}
 
 #product-container {
   width: 80%;
@@ -29,6 +30,15 @@ code {
   flex-wrap: wrap;
   margin-left: 24px;
 }
+
+#product-show-container{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 24px;
+}
+
 .product-card {
   width: 30%;
   border: black solid;
