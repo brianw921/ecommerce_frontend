@@ -12,18 +12,18 @@ import { connect } from 'react-redux';
             return this.props.products
         } else {
              let category = this.props.products
-             let sorted = category.filter((item) => {
-                 
-                 return item.gender === this.props.sortGender
-             })
-            //  console.log(sorted)
+             let sorted = category.filter((item) => {  
+                 return item.gender === this.props.sortGender 
+            })
              return sorted
         }
     }
+
+
    
     render() {
         
-    // console.log(this.props)
+    console.log(this.props)
         return (
             <div id="product-container">
                 {this.sortProducts().map((product) => {
@@ -40,7 +40,8 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
     return {
         products: state.productStore.products,
-        sortGender: state.productStore.sortGender
+        sortGender: state.productStore.sortGender,
+        sortCategory: state.productStore.sortCategory
     }
 }
 

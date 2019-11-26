@@ -6,12 +6,12 @@ import { showProduct } from '../Redux/actions'
 class ProductCard extends Component {
 
     productRedirect = () => {
-        console.log("DID I GET CLICKED?",this.props)
+    
         this.props.showProduct(this.props.product)
         this.props.history.push(`/items/${this.props.product.id}`)
     }
     render() {
-        // console.log("productcard", this.props)
+        
         const { image , product_full_name, original_price } = this.props.product
         return (
             <div className="product-card" onClick={this.productRedirect}>

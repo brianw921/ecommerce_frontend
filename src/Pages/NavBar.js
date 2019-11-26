@@ -14,13 +14,18 @@ class NavBar extends Component {
         })
     }
 
-    redirectMainComponent = () => {
-        console.log("IM GOING HOME")
-        this.props.history.push('/')
+    // redirectMainComponent = () => {
+    //     console.log("IM GOING HOME")
+    //     this.props.history.push('/')
+    // }
+
+    viewCart = () => {
+        this.props.history.push('/cart')
     }
 
     render() {
-        // console.log("what is the nav bar", this.props)
+        console.log(this.props.history)
+        const { cart } = this.props
         const { search } = this.state
         return (
             
@@ -35,6 +40,9 @@ class NavBar extends Component {
                         value={search}
                         onChange={this.handleSearch}></input>
                   <span role="img" aria-label="search"> 🔍</span>
+                  <Link to="/cart"><button>Cart {cart.length}</button></Link>
+                  <Link to="/login">Login</Link>
+                  <Link to="/signup">Sign Up</Link>
             </div>
            
         )
@@ -43,7 +51,8 @@ class NavBar extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.productStore.products
+        products: state.productStore.products,
+        cart: state.productStore.cart
     }
 }
 

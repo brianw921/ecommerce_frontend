@@ -16,22 +16,13 @@ code {
   display: flex;
   justify-content: space-evenly;
   background-color: grey;
-  border: 1px black solid;
 }
 
-#filter-bar {
-  width: 20%;
-}
+/* #filter-bar {
+
+} */
 
 #product-container {
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 24px;
-}
-
-#product-show-container{
   width: 80%;
   display: flex;
   flex-direction: row;

@@ -1,26 +1,34 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { submitOrder } from '../Redux/actions';
+import { submitOrder , removeFromCart} from '../Redux/actions';
 
 class Cart extends Component {
 
     submitOrder = (e) => {
         e.preventDefault()
-        console.log("checkingout")
+        console.log("BRIAN", this.props.cart)
         this.props.submitOrder(this.props.cart)
     }
+
+    removeFromCart = (cartItem) => {
+            
+        
+        this.props.removeFromCart(cartItem.id)
+    }
     render() {
-        console.log(this.props.cart)
+        
         const { cart } = this.props
         return (
             <div>
+                <button onClick={this.submitOrder}>Checkout</button>
                 <ol>
                     {cart.map((cartItem) => {
                         console.log(cartItem)
-                        return <li>{cartItem.product_full_name} USD {cartItem.original_price}</li>
+                        return <li>{cartItem.product_full_name} USD {cartItem.original_price}
+                         <button onClick={() => this.removeFromCart(cartItem)}>Remove from Cart</button></li>
                     })}
                 </ol>
-                <button onClick={this.submitOrder}>Checkout</button>
+                
             </div>
         )
     }
@@ -34,7 +42,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        submitOrder: (orderObj) => dispatch(submitOrder(orderObj))
+        submitOrder: (orderObj) => dispatch(submitOrder(orderObj)),
+        removeFromCart: (cartItemId) => dispatch(removeFromCart(cartItemId))
     }
 }
 

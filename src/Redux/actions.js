@@ -45,7 +45,6 @@ export const fetchProducts = () => {
         return fetch('http://localhost:3000/items')
         .then(r => r.json())
         .then((data) => {
-            // console.log(data)
            dispatch({type: "PRODUCT_LIST", payload: data})
         }
         )
@@ -76,18 +75,30 @@ export const addToCart = (item) => {
         dispatch({type: "ADD_TO_CART", payload: item})
     }
 }
+export const removeFromCart = (cartItemId) => {
+    console.log("CartItem.id", cartItemId)
+    return (dispatch) => {
+        dispatch({type: "REMOVE_FROM_CART", payload: cartItemId})
+    }
+}
 
-export const submitOrder = (orderObj) => {
+export const submitOrder = (orderCartArr) => {
     return (dispatch) => {
         return fetch("http://localhost:3000/orders", {
             method: "POST",
             headers: { "content-type": "application/json", accept: "application/json"},
-            body: JSON.stringify({order: orderObj})
+            body: JSON.stringify({
+                order: {
+                    cart: orderCartArr
+                }
+            })
         })
         .then(r => r.json())
         .then(console.log)
     }
 }
+
+
 
 //set action that will handle dispatch for product card
 //get click function going to get the card the show and create and order. 

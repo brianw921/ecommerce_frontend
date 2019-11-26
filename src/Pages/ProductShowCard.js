@@ -16,11 +16,12 @@ class ProductShowCard extends Component {
         this.props.addToCart(this.props.showProduct)
     }
     render() {
-       
+       console.log("WHAT IS USER",this.props.user)
        if (this.state.orderPopup) {
            return <OrderPopup showProduct={this.props.showProduct} history={this.props.history}/>
        }
 
+       
         const { product_full_name ,image, description_headline,
         description_bullets, original_price} = this.props.showProduct
         return (
@@ -36,7 +37,11 @@ class ProductShowCard extends Component {
                     <ul>{description_bullets}</ul>
                     
                     
-                    <button onClick={this.orderPopup}>Add To Cart</button>
+                    {this.props.user ? <button onClick={this.orderPopup}>Add To Cart</button> 
+                    : 
+                    <Link>
+                    <p>Please Login in to Purchase</p>
+                    </Link>}
                     
                 </div>
             </div>
@@ -46,8 +51,10 @@ class ProductShowCard extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log("WHAT IS STATE", state)
     return {
-    showProduct: state.productStore.showProduct
+    showProduct: state.productStore.showProduct,
+    user: state.mainState.currentUser.username
     }
 }
 
