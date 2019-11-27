@@ -12,7 +12,8 @@ class ProductShowCard extends Component {
         this.setState({
             orderPopup: !this.state.orderPopup
         })
-        this.props.addToCart(this.props.showProduct, this.props.user)
+        this.props.addToCart(this.props.showProduct)
+        // this.props.addToCart(this.props.showProduct, this.props.user)
     }
     render() {
        
@@ -61,9 +62,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        addToCart: (item, user) => dispatch(addToCart(item, user))
+        addToCart: (item) => dispatch(addToCart(item))
     }
 }
-
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         addToCart: (item, user) => dispatch(addToCart(item, user))
+//     }
+// }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductShowCard)
