@@ -33,6 +33,8 @@ class ProductShowCard extends Component {
             <div id="product-show-container">
                 
                 <div>
+
+                    {this.props.user.length === 1 ? <button onClick={this.orderPopup}>Add To Cart</button> : null} 
                     <h1>{product_full_name}</h1>
                     <img src={image}  alt="product-img"/>
                     <h1>Description</h1>
@@ -45,9 +47,7 @@ class ProductShowCard extends Component {
                     : 
                     <p>Please Login in to Purchase</p>
                     } */}
-                    {this.props.user ? <button onClick={this.orderPopup}> AddToCArt</button> 
-                    :
-                    <p>Please Login in to purchase</p>}
+                   
                     
                 </div>
             </div>
