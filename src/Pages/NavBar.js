@@ -4,29 +4,17 @@ import {Link} from 'react-router-dom'
 
 class NavBar extends Component {
 
-    state = { 
-        search: ""
-    }
+    
 
-    handleSearch = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-
-    // redirectMainComponent = () => {
-    //     console.log("IM GOING HOME")
-    //     this.props.history.push('/')
-    // }
 
     viewCart = () => {
         this.props.history.push('/cart')
     }
 
     render() {
-        console.log(this.props.history)
+        // console.log(this.props)
         const { cart } = this.props
-        const { search } = this.state
+        
         return (
             
             <div id="nav-bar" >
@@ -34,11 +22,7 @@ class NavBar extends Component {
                     < img alt="logo" src ="https://hips.hearstapps.com/esq.h-cdn.co/assets/16/52/1600x800/landscape-1483042503-es-161229-adidas-4.jpg?resize=480:*" />
                     </Link>
                   <h1>This is nav bar, should have search/login/& cart</h1>
-                  <input id="search-bar" 
-                        placeholder="search"
-                        name="search"
-                        value={search}
-                        onChange={this.handleSearch}></input>
+                  
                   <span role="img" aria-label="search"> 🔍</span>
                   <Link to="/cart"><button>Cart {cart.length}</button></Link>
                   <Link to="/login">Login</Link>
@@ -56,4 +40,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(NavBar)
+
+
+
+export default connect(mapStateToProps )(NavBar)

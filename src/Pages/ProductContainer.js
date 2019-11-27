@@ -6,33 +6,51 @@ import { connect } from 'react-redux';
 
  class ProductContainer extends Component {
     
-    
+    state = {
+        search: ""
+    }
     sortProducts = () => {
         if (this.props.sortGender === "") {
-            return this.props.products
+            return this.props.products.filter(product => product.product_full_name.toLowerCase().includes(this.state.search.toLowerCase()))
         } else {
              let category = this.props.products
              let sorted = category.filter((item) => {  
-                 return item.gender === this.props.sortGender 
+                 return item.gender === this.props.sortGender  
             })
-             return sorted
+            return sorted.filter(product => product.product_full_name.toLowerCase().includes(this.state.search.toLowerCase()))
         }
     }
 
-
+    handleChange = e => this.setState({ search: e.target.value })
    
-    render() {
-        
-    console.log(this.props)
-        return (
-            <div id="product-container">
-                {this.sortProducts().map((product) => {
+    
+    
+
+    productComponents = () => {
+        return this.sortProducts().map( (product) => {
                     return <ProductCard key={product.id}
                                         product={product}
-                                        history = {this.props.history}/>
-                }
-                )}
+                                        history = {this.props.history}
+                    />
+        })
+    }
+    render() {
+        
+  
+        return (
+            <>
+            <form onSubmit={this.handleSubmit} style={{ display: 'block', width: '100%'}}>
+                  <input id="search-bar" 
+                        placeholder="search"
+                        name="search"
+                        value={this.state.search}
+                        onChange={this.handleChange}></input>
+                        <input type="submit" />
+                        </form>
+            <div id="product-container">
+                {this.productComponents()}
             </div>
+            </>
         )
     }
 }
@@ -40,8 +58,8 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
     return {
         products: state.productStore.products,
-        sortGender: state.productStore.sortGender,
-        sortCategory: state.productStore.sortCategory
+        sortGender: state.productStore.sortGender
+        // sortCategory: state.productStore.sortCategory
     }
 }
 

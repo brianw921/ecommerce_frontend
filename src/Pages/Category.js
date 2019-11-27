@@ -13,6 +13,7 @@ class Category extends Component {
                 <h1>Categories</h1>
                 <p onClick={() => this.props.setSortGender("")}>All</p>
                 <p onClick={() => this.props.setSortGender("M")}>Men</p>
+                    <p> </p>
                 <p onClick={() => this.props.setSortGender("W")}>Women</p>
                 <p onClick={() => this.props.setSortGender("K")}>Kids</p>
                 {/* <p onClick={() => this.props.setSortCategory("Performance")}>Performance</p> */}

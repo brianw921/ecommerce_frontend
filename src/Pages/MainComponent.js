@@ -15,13 +15,9 @@ class MainComponent extends Component {
 
     
     render() {
-        
         return (
             <div style={{border: "1px black solid"}}>
-                
-
-                <div style={{"display": 'flex'}}>
-                    
+                <div style={{"display": 'flex'}}> 
                     <ProductContainer history={this.props.history} />
                 </div>
             </div>

@@ -10,7 +10,7 @@ export const userPostFetch = (user) => {
         })
         .then( r => r.json())
         .then( (userObj) => {
-            console.log(userObj)
+            
             localStorage.setItem("token" , userObj.jwt)
             dispatch(loginUser(userObj.user))
         })
@@ -33,7 +33,7 @@ export const getUser = (user) => {
         })
         .then(r => r.json())
         .then( loginData => {
-            console.log(loginData.token)
+            
             localStorage.setItem("token", loginData.token)
             dispatch(loginUser(loginData.user))
         })
@@ -62,7 +62,7 @@ export const showProduct = (item) => {
         return fetch(`http://localhost:3000/items/${item.id}`)
         .then(r => r.json())
         .then( (item) => {
-            console.log("hgjhghjk",item)
+            
             dispatch({type: "SHOW_PRODUCT", payload: item})
             
         })

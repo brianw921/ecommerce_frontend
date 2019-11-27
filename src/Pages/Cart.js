@@ -6,7 +6,7 @@ class Cart extends Component {
 
     submitOrder = (e) => {
         e.preventDefault()
-        console.log("BRIAN", this.props.cart)
+        // console.log("BRIAN", this.props.cart)
         this.props.submitOrder(this.props.cart)
     }
 

@@ -9,7 +9,6 @@ class ProductShowCard extends Component {
         orderPopup: false
     }
     orderPopup = () => {
-        // console.log("i have been clicked")
         this.setState({
             orderPopup: !this.state.orderPopup
         })
@@ -39,9 +38,9 @@ class ProductShowCard extends Component {
                     
                     {this.props.user ? <button onClick={this.orderPopup}>Add To Cart</button> 
                     : 
-                    <Link>
+                    
                     <p>Please Login in to Purchase</p>
-                    </Link>}
+                    }
                     
                 </div>
             </div>

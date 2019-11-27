@@ -38,3 +38,7 @@ code {
 #search-bar {
   height: 30%;
 }
+
+#root>div>div:nth-child(3)>div {
+  flex-direction: column
+}
