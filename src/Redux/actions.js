@@ -70,7 +70,10 @@ export const showProduct = (item) => {
     }
 }
 
+
+
 export const addToCart = (item) => {
+    console.log(item)
     return (dispatch) => {
         dispatch({type: "ADD_TO_CART", payload: item})
     }

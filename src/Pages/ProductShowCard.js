@@ -15,7 +15,8 @@ class ProductShowCard extends Component {
         this.props.addToCart(this.props.showProduct)
     }
     render() {
-       console.log("WHAT IS USER",this.props.user)
+       console.log("WHAT IS USER",this.props)
+       
        if (this.state.orderPopup) {
            return <OrderPopup showProduct={this.props.showProduct} history={this.props.history}/>
        }

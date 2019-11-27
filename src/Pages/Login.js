@@ -20,6 +20,7 @@ class Login extends Component {
     }
 
     render() {
+        console.log("LOGIN", this.props)
         const { username, password } = this.state
         return (
             <>
