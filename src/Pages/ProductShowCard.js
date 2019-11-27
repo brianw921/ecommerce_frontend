@@ -12,12 +12,13 @@ class ProductShowCard extends Component {
         this.setState({
             orderPopup: !this.state.orderPopup
         })
-        this.props.addToCart(this.props.showProduct, this.props.user)
+        this.props.addToCart(this.props.showProduct)
+        // this.props.addToCart(this.props.showProduct, this.props.user)
     }
     render() {
        
-    console.log(this.props.user)
-    console.log(this.props.showProduct)
+    console.log("fsafsad", this.props.user)
+    console.log("fsadfsdaf", this.props.showProduct)
        if (this.state.orderPopup) {
            return <OrderPopup showProduct={this.props.showProduct} history={this.props.history}/>
        }
@@ -25,6 +26,8 @@ class ProductShowCard extends Component {
        
         const { product_full_name ,image, description_headline,
         description_bullets, original_price} = this.props.showProduct
+
+        
         return (
             
             <div id="product-show-container">
@@ -38,11 +41,13 @@ class ProductShowCard extends Component {
                     <ul>{description_bullets}</ul>
                     
                     
-                    {this.props.user ? <button onClick={this.orderPopup}>Add To Cart</button> 
+                    {/* {this.props.user ? <button onClick={this.orderPopup}>Add To Cart</button> 
                     : 
-                    
                     <p>Please Login in to Purchase</p>
-                    }
+                    } */}
+                    {this.props.user ? <button onClick={this.orderPopup}> AddToCArt</button> 
+                    :
+                    <p>Please Login in to purchase</p>}
                     
                 </div>
             </div>
@@ -61,7 +66,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        addToCart: (item, user) => dispatch(addToCart(item, user))
+        addToCart: (item) => dispatch(addToCart(item))
+        // addToCart: (item, user) => dispatch(addToCart(item, user))
     }
 }
 

@@ -72,8 +72,8 @@ export const showProduct = (item) => {
     }
 }
 
-export const addToCart = (item, user) => {
-    console.log("BRIAN WONG",user)
+// export const addToCart = (item, user) => {
+//     console.log("BRIAN WONG",user)
     // return (dispatch) => {
     //     fetch('http://localhost:3000/order_items', {
     //     method: 'POST',
@@ -90,14 +90,14 @@ export const addToCart = (item, user) => {
     // }
     // )
     // }
-}
-
-// export const addToCart = (item) => {
-//     console.log(item)
-//     return (dispatch) => {
-//         dispatch({type: "ADD_TO_CART", payload: item})
-//     }
 // }
+
+export const addToCart = (item) => {
+    console.log(item)
+    return (dispatch) => {
+        dispatch({type: "ADD_TO_CART", payload: item})
+    }
+}
 export const removeFromCart = (cartItemId) => {
     console.log("CartItem.id", cartItemId)
     return (dispatch) => {
