@@ -15,7 +15,7 @@ class OrderPopup extends Component {
     }
     
     render() {
-        console.log("OrderPopup",this.props)
+        
         const { product_full_name ,image, description_headline,
         description_bullets, original_price} = this.props.showProduct
         return (

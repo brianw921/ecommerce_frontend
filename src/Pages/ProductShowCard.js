@@ -17,8 +17,8 @@ class ProductShowCard extends Component {
     }
     render() {
        
-    console.log("fsafsad", this.props.user)
-    console.log("fsadfsdaf", this.props.showProduct)
+    console.log("USER PRODUCT SHOWCART", this.props.user)
+   
        if (this.state.orderPopup) {
            return <OrderPopup showProduct={this.props.showProduct} history={this.props.history}/>
        }
@@ -43,10 +43,10 @@ class ProductShowCard extends Component {
                     <ul>{description_bullets}</ul>
                     
                     
-                    {/* {this.props.user ? <button onClick={this.orderPopup}>Add To Cart</button> 
+                    {this.props.user.username ? <button onClick={this.orderPopup}>Add To Cart</button> 
                     : 
                     <p>Please Login in to Purchase</p>
-                    } */}
+                    }
                    
                     
                 </div>
@@ -66,8 +66,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        addToCart: (item) => dispatch(addToCart(item))
-        // addToCart: (item, user) => dispatch(addToCart(item, user))
+        // addToCart: (item) => dispatch(addToCart(item))
+        addToCart: (item, user) => dispatch(addToCart(item, user))
     }
 }
 

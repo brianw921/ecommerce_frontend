@@ -117,12 +117,13 @@ export const submitOrder = (orderCartArr) => {
             })
         })
         .then(r => r.json())
-        .then(console.log)
+        .then(data => {
+            dispatch({})
+        })
     }
 }
 
 
 
-//set action that will handle dispatch for product card
-//get click function going to get the card the show and create and order. 
+
 
