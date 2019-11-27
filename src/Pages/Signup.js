@@ -45,7 +45,7 @@ class Signup extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        userPostFetch: userInfo => dispatch(userPostFetch(userInfo))
+        userPostFetch: (userInfo) => dispatch(userPostFetch(userInfo))
     }
 }
 
