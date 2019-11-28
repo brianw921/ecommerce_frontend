@@ -12,8 +12,8 @@ class ProductShowCard extends Component {
         this.setState({
             orderPopup: !this.state.orderPopup
         })
-        this.props.addToCart(this.props.showProduct)
-        // this.props.addToCart(this.props.showProduct, this.props.user)
+        // this.props.addToCart(this.props.showProduct)
+        this.props.addToCart(this.props.showProduct, this.props.user)
     }
     render() {
        

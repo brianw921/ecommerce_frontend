@@ -37,6 +37,7 @@ export const getUser = (user) => {
            
             localStorage.setItem("token", loginData.token)
             dispatch(loginUser(loginData.user))
+            dispatch({type: "ADD_TO_CART", payload: loginData.user.cart})
            
         })
     }
@@ -64,7 +65,7 @@ export const showProduct = (item) => {
         return fetch(`http://localhost:3000/items/${item.id}`)
         .then(r => r.json())
         .then( (item) => {
-            
+            console.log("ONE", item)
             dispatch({type: "SHOW_PRODUCT", payload: item})
             
         })
@@ -72,45 +73,62 @@ export const showProduct = (item) => {
     }
 }
 
-// export const addToCart = (item, user) => {
-//     console.log("BRIAN WONG",user)
-    // return (dispatch) => {
-    //     fetch('http://localhost:3000/order_items', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' , Accept: 'application/json'},
-    //     body: JSON.stringify({
-    //         item_id: item.id,
-    //         order_id: user.cart.id
-    //     })
-    // })
-    // .then(res => res.json())
-    // .then((data) => {
-    //     console.log("ACTION", data)
-    //     dispatch({type: "ADD_TO_CART", payload: data})
-    // }
-    // )
-    // }
-// }
-
-export const addToCart = (item) => {
-    console.log(item)
+export const addToCart = (item, user) => {
+    console.log("BRIAN WONG",user)
     return (dispatch) => {
-        dispatch({type: "ADD_TO_CART", payload: item})
+        fetch('http://localhost:3000/order_items', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' , Accept: 'application/json'},
+        body: JSON.stringify({
+            item_id: item.id,
+            order_id: user.cart.id
+        })
+    })
+    .then(res => res.json())
+    .then((data) => {
+        console.log("ACTION", data)
+        dispatch({type: "ADD_TO_CART", payload: data})
+    }
+    )
     }
 }
+
+// export const addToCart = (item) => {
+//     console.log(item)
+//     return (dispatch) => {
+//         dispatch({type: "ADD_TO_CART", payload: item})
+//     }
+// }
+// export const removeFromCart = (cartItemId) => {
+//     console.log("CartItem.id", cartItemId)
+//     return (dispatch) => {
+//         dispatch({type: "REMOVE_FROM_CART", payload: cartItemId})
+//     }
+// }
 export const removeFromCart = (cartItemId) => {
-    console.log("CartItem.id", cartItemId)
     return (dispatch) => {
-        dispatch({type: "REMOVE_FROM_CART", payload: cartItemId})
+        return fetch(`http://localhost:3000/order_items/${cartItemId}`, {
+            method: "DELETE"
+        })
+        .then(r => r.json())
+        .then((data) => {
+            console.log("TWO", data)
+            dispatch({type: "REMOVE_FROM_CART", payload: data})
+        })
+
     }
 }
 
 export const submitOrder = (orderCartArr) => {
+    console.log("orderCartArr", orderCartArr)
     return (dispatch) => {
         return fetch("http://localhost:3000/orders", {
             method: "POST",
-            headers: { "content-type": "application/json", accept: "application/json"},
+            headers: { "content-type": "application/json", accept: "application/json",
+        "Authorization": 'bearer ' + localStorage.token
+        },
             body: JSON.stringify({
+                
                 order: {
                     cart: orderCartArr
                 }
@@ -118,7 +136,8 @@ export const submitOrder = (orderCartArr) => {
         })
         .then(r => r.json())
         .then(data => {
-            dispatch({})
+            console.log("BRIAN WONG", data)
+            dispatch({type: "SUBMIT_ORDER", payload: data})
         })
     }
 }

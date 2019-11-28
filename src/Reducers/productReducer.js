@@ -19,13 +19,16 @@ export default (state = initialState , action) => {
             products: action.payload
         }
         case 'SHOW_PRODUCT':
+        console.log("TWO", action.payload)
         return {...state, showProduct: action.payload}
         
         case 'SORT_GENDER':
         return {...state, sortGender: action.payload}
 
         case 'ADD_TO_CART':
-        return {...state, cart: [...state.cart, action.payload]}
+        
+        
+        return {...state, cart: action.payload.order_items}
 
         // case "SEARCH":
         //      const productList = state.products.filter(p => p.product_full_name.toLowerCase().includes(action.payload.toLowerCase()))
@@ -35,11 +38,11 @@ export default (state = initialState , action) => {
         //          search: action.payload
         //      }
         case 'REMOVE_FROM_CART':
-        
-        return {...state, cart: [...handleRemoveFromCart([...state.cart], action.payload)]}
+        console.log("THREE", action.payload.id)
+        return {...state, cart: [...handleRemoveFromCart([...state.cart], action.payload.id)]}
 
         case 'SUBMIT_ORDER':
-        return {}
+        return {...state, cart: []}
     default:
     
         return state

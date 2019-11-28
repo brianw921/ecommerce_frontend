@@ -14,17 +14,19 @@ class Cart extends Component {
             
         
         this.props.removeFromCart(cartItem.id)
+        console.log("ONE", this.props.removeFromCart(cartItem.id))
     }
     render() {
         
         const { cart } = this.props
+        console.log("fdsafasdf", cart)
         return (
             <div>
                 <button onClick={this.submitOrder}>Checkout</button>
                 <ol>
                     {cart.map((cartItem) => {
                         console.log(cartItem)
-                        return <li>{cartItem.product_full_name} USD {cartItem.original_price}
+                        return <li>{cartItem.item.product_full_name} USD {cartItem.item.original_price}
                          <button onClick={() => this.removeFromCart(cartItem)}>Remove from Cart</button></li>
                     })}
                 </ol>

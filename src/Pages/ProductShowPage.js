@@ -5,7 +5,7 @@ import ProductShowCard from './ProductShowCard'
 
 class ProductShowPage extends Component {
     render() {
-        
+        console.log("THEREE", this.props.showProduct)
         return (
             
             <div style={{border: '1px black solid'}}>
