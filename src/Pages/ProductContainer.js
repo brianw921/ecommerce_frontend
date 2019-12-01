@@ -21,7 +21,9 @@ import { connect } from 'react-redux';
         }
     }
 
-    handleChange = e => this.setState({ search: e.target.value })
+    handleChange = (e)=> {
+        this.setState({ search: e.target.value })
+    }
    
     
     

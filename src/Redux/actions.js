@@ -1,4 +1,5 @@
 export const userPostFetch = (user) => {
+    console.log("actions", user)
     return (dispatch) => {
         return fetch("http://localhost:3000/users", {
             method: "POST",
@@ -10,7 +11,7 @@ export const userPostFetch = (user) => {
         })
         .then( r => r.json())
         .then( (userObj) => {
-            
+            console.log("USEROBJ", userObj)
             localStorage.setItem("token" , userObj.jwt)
             
             dispatch(loginUser(userObj.user))
@@ -34,10 +35,17 @@ export const getUser = (user) => {
         })
         .then(r => r.json())
         .then( loginData => {
-           
+           console.log(loginData)
             localStorage.setItem("token", loginData.token)
             dispatch(loginUser(loginData.user))
-            dispatch({type: "ADD_TO_CART", payload: loginData.user.cart})
+            
+             
+
+            if (loginData) {
+                return dispatch({type: "ADD_TO_CART", payload: loginData.user.cart})
+            } else {
+                return loginData.error
+            }
            
         })
     }
@@ -93,18 +101,8 @@ export const addToCart = (item, user) => {
     }
 }
 
-// export const addToCart = (item) => {
-//     console.log(item)
-//     return (dispatch) => {
-//         dispatch({type: "ADD_TO_CART", payload: item})
-//     }
-// }
-// export const removeFromCart = (cartItemId) => {
-//     console.log("CartItem.id", cartItemId)
-//     return (dispatch) => {
-//         dispatch({type: "REMOVE_FROM_CART", payload: cartItemId})
-//     }
-// }
+
+
 export const removeFromCart = (cartItemId) => {
     return (dispatch) => {
         return fetch(`http://localhost:3000/order_items/${cartItemId}`, {

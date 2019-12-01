@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import OrderPopup from './OrderPopup'
 import { addToCart } from '../Redux/actions';
+import { Link } from 'react-router-dom'
 
 
 class ProductShowCard extends Component {
@@ -17,11 +18,9 @@ class ProductShowCard extends Component {
     }
     render() {
        
-    console.log("USER PRODUCT SHOWCART", this.props.user)
-   
-       if (this.state.orderPopup) {
-           return <OrderPopup showProduct={this.props.showProduct} history={this.props.history}/>
-       }
+        if (this.state.orderPopup) {
+            return <OrderPopup showProduct={this.props.showProduct} history={this.props.history}/>
+        }
 
        
         const { product_full_name ,image, description_headline,
@@ -34,7 +33,7 @@ class ProductShowCard extends Component {
                 
                 <div>
 
-                    {this.props.user.length === 1 ? <button onClick={this.orderPopup}>Add To Cart</button> : null} 
+                    
                     <h1>{product_full_name}</h1>
                     <img src={image}  alt="product-img"/>
                     <h1>Description</h1>
@@ -45,7 +44,7 @@ class ProductShowCard extends Component {
                     
                     {this.props.user.username ? <button onClick={this.orderPopup}>Add To Cart</button> 
                     : 
-                    <p>Please Login in to Purchase</p>
+                    <Link to="/login"><button>Please Login in to Purchase</button></Link>
                     }
                    
                     

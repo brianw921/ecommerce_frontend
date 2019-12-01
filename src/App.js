@@ -9,20 +9,23 @@ import NavBar from './Pages/NavBar'
 import FilterBar from './Pages/FilterBar'
 import OrderPopup from './Pages/OrderPopup'
 import Cart from './Pages/Cart'
+// import Category from './Pages/Category'
+import UserProfile from './Pages/UserProfile'
 
 
 class App extends React.Component {
   
   render() {
-    console.log(this.props)
     return (
       <div>
           <NavBar/>
-          <FilterBar />
+          <FilterBar history={this.props.history}/>
           <Switch>
               <Route exact path="/" component={MainComponent}/>
+             
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
+              <Route path="/profile" component={UserProfile}/>
               <Route path="/items/:id" component={ProductShowPage}/>
               <Route path="/items/:id/addtoCart" component={OrderPopup}/>
               <Route path='/cart' component={Cart}/>

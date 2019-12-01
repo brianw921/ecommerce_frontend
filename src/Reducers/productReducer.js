@@ -26,8 +26,6 @@ export default (state = initialState , action) => {
         return {...state, sortGender: action.payload}
 
         case 'ADD_TO_CART':
-        
-        
         return {...state, cart: action.payload.order_items}
 
         // case "SEARCH":

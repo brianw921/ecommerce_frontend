@@ -17,21 +17,24 @@ class Login extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.getUser(this.state)
+        this.props.history.push("/")
     }
 
     render() {
-    
+        
         const { username, password } = this.state
         return (
             <>
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
+                    <label>Username:  </label>
                     <input 
                         type="text"
                         name="username"
                         value={username}
                         onChange={this.handleChange}
                     />
+                    <label>Password:  </label>
                     <input 
                         type="text"
                         name="password"
