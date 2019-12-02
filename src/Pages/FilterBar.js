@@ -7,8 +7,6 @@ export default class FilterBar extends Component {
         console.log("filterBar" ,this.props)
         return (
             <div id="filter-bar">
-                <h1>I'm filter Bar</h1>
-                
                 <Category history={this.props.history}/>
             </div>
         )

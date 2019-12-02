@@ -3,12 +3,19 @@ import { connect } from 'react-redux'
 import OrderPopup from './OrderPopup'
 import { addToCart } from '../Redux/actions';
 import { Link } from 'react-router-dom'
-
+import Modal from './Modal.js'
 
 class ProductShowCard extends Component {
     state = {
-        orderPopup: false
+        orderPopup: false,
+        show: false
     }
+
+    showModal = () => {
+        this.setState({
+            show: !this.state.show
+        })
+    };
     orderPopup = () => {
         this.setState({
             orderPopup: !this.state.orderPopup
@@ -19,7 +26,7 @@ class ProductShowCard extends Component {
     render() {
        
         if (this.state.orderPopup) {
-            return <OrderPopup showProduct={this.props.showProduct} history={this.props.history}/>
+            return <OrderPopup orderPopup={this.state.orderPopup} showProduct={this.props.showProduct} history={this.props.history}/>
         }
 
        
@@ -32,7 +39,8 @@ class ProductShowCard extends Component {
             <div id="product-show-container">
                 
                 <div>
-
+                     <button  onClick={() => this.showModal()}> show Modal </button>
+                   <Modal show={this.state.show}/>
                     
                     <h1>{product_full_name}</h1>
                     <img src={image}  alt="product-img"/>
