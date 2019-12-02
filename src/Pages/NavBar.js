@@ -7,7 +7,7 @@ class NavBar extends Component {
 
     handleLogout = (e) => {
         e.preventDefault()
-        console.log(e.target)
+        
         this.props.logOut()
         
     }

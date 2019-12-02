@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { getUser } from '../Redux/actions'
 
+
 class Login extends Component {
     state = {
         username: '',
@@ -18,16 +19,26 @@ class Login extends Component {
         e.preventDefault()
         
         this.props.getUser(this.state)
-        if (localStorage.token) {
-            this.props.history.push("/")
-        }
+         if (localStorage.token) {
+             this.props.history.push("/")
+         }
+         
        
     }
+    // comnponentDidUpdate(){
+    //     console.log("LOGIN")
+    //     if (localStorage.token) {
+            
+    //         this.props.history.push("/")
+    //     }
+    // }
+
+     
 
     render() {
-        console.log(this.props)
+        
         const { username, password } = this.state
-
+        
         // if (localStorage.token) {
         //     this.props.history.push("/")
         // }

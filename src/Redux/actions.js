@@ -45,6 +45,7 @@ export const getUser = (user) => {
            
            if (loginData.user) {
                 localStorage.setItem("token", loginData.token)
+
                 dispatch({type: "ADD_TO_CART", payload: loginData.user.cart})
                 return dispatch(loginUser(loginData.user))
             } else if (loginData.error) {
@@ -86,7 +87,7 @@ export const showProduct = (item) => {
 }
 
 export const addToCart = (item, user) => {
-    console.log("BRIAN WONG",user)
+    
     return (dispatch) => {
         fetch('http://localhost:3000/order_items', {
         method: 'POST',
@@ -98,7 +99,7 @@ export const addToCart = (item, user) => {
     })
     .then(res => res.json())
     .then((data) => {
-        console.log("ACTION", data)
+        
         dispatch({type: "ADD_TO_CART", payload: data})
     }
     )
@@ -122,7 +123,7 @@ export const removeFromCart = (cartItemId) => {
 }
 
 export const submitOrder = (orderCartArr) => {
-    console.log("orderCartArr", orderCartArr)
+    console.log(orderCartArr)
     return (dispatch) => {
         return fetch("http://localhost:3000/orders", {
             method: "POST",
