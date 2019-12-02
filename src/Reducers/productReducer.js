@@ -39,6 +39,9 @@ export default (state = initialState , action) => {
         console.log("THREE", action.payload.id)
         return {...state, cart: [...handleRemoveFromCart([...state.cart], action.payload.id)]}
 
+        case 'CLEAR_CART':
+        return {...state, cart: []}
+
         case 'SUBMIT_ORDER':
         return {...state, cart: []}
     default:

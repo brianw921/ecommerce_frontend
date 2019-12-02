@@ -17,20 +17,26 @@ class App extends React.Component {
   
   render() {
     return (
+    
       <div>
           <NavBar/>
           <FilterBar history={this.props.history}/>
           <Switch>
               <Route exact path="/" component={MainComponent}/>
-             
+              
+              
+              
+              <Route path="/profile" component={UserProfile}/>  
+              
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
-              <Route path="/profile" component={UserProfile}/>
               <Route path="/items/:id" component={ProductShowPage}/>
               <Route path="/items/:id/addtoCart" component={OrderPopup}/>
               <Route path='/cart' component={Cart}/>
+              
           </Switch>
       </div>
+      
   );
   }
 }

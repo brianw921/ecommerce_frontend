@@ -16,14 +16,23 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        
         this.props.getUser(this.state)
-        this.props.history.push("/")
+        if (localStorage.token) {
+            this.props.history.push("/")
+        }
+       
     }
 
     render() {
-        
+        console.log(this.props)
         const { username, password } = this.state
+
+        // if (localStorage.token) {
+        //     this.props.history.push("/")
+        // }
         return (
+
             <>
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
@@ -44,23 +53,23 @@ class Login extends Component {
                     <input type="submit"/>
                     
                 </form>
+                {this.props.error && this.props.error} 
             </>
         )
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        error: state.mainState.error
+    }
+}
 const mapDispatchToProps = (dispatch) => {
     return {
         getUser: (loginData) => dispatch(getUser(loginData))
     }
 }
 
-// function mapDispatchToProps(dispatch){
-//     return {
-//         getUser: (loginData) => {
-//             dispatch(getUser(loginData))
-//         }
-//     }
-// }
 
-export default connect(null, mapDispatchToProps)(Login)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

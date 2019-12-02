@@ -1,5 +1,8 @@
 const initialState = {
-    currentUser: {}
+    currentUser: {
+        orders: [],
+        error: ""
+    }
 }
 
 export default (state = initialState , action) => {
@@ -7,6 +10,10 @@ export default (state = initialState , action) => {
         case 'LOGIN_USER':
         console.log("WHAT IS THE OBJECT", action.payload)
         return {...state, currentUser: action.payload}
+        case 'ERROR_HANDLING':
+        return {...state, error: action.payload}
+        case 'LOG_OUT':
+        return initialState
     default:
         return state
     };

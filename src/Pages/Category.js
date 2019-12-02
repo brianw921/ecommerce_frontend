@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAnySort } from '../Redux/actions'
-import {Link } from 'react-router-dom'
+import { withRouter} from 'react-router'
 
 class Category extends Component {
 
     handleSort = (category) => {
         this.props.setSortGender(category)
-        // this.props.history.push('/')
-        return <Link to="/"></Link>
+        this.props.history.push('/')
+        
     }
     render() {
-        console.log(this.props)
-        //DONT FORGET TO MAKE A SORT
+        
         return (
             <div>
                 <h1>Categories</h1>
@@ -43,4 +42,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Category)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Category))

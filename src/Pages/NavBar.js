@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {Link } from 'react-router-dom'
+import {logOut} from "../Redux/actions"
 
 class NavBar extends Component {
 
-    
+    handleLogout = (e) => {
+        e.preventDefault()
+        console.log(e.target)
+        this.props.logOut()
+        
+    }
     render() {
         
-        const { cart } = this.props
+        const { cart, user } = this.props
+        
+        console.log(user)
+        console.log(cart)
         
         return (
             <nav id="nav-bar">
@@ -20,12 +29,18 @@ class NavBar extends Component {
                     <div className="navbar-items-right">
                         <div className="navbar-navigation-items">
                             <ul >
+                                
                                 <li><input aria-label="search" placeholder=" 🔍 This Search does not work yet"
                                             value={null}></input></li>
                                 <li><Link to="/cart">Cart {cart.length}</Link></li>
+                                {user.id? <><li><Link to="/profile">Profile</Link></li>
+                                <li><Link to="/" onClick={this.handleLogout}>Log Out</Link></li> </> : 
+                                <>
                                 <li><Link to="/login">Login</Link></li>
                                 <li><Link to="/signup">Sign Up</Link></li>
-                                <li><Link to="/profile">Profile</Link></li>
+                                </>
+                                }
+                                
                             </ul>
                         </div>
                     </div>
@@ -39,11 +54,16 @@ const mapStateToProps = (state) => {
     return {
         products: state.productStore.products,
         cart: state.productStore.cart,
-        search: state.productStore.search
+        search: state.productStore.search,
+        user: state.mainState.currentUser
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        logOut: () => dispatch(logOut())
     }
 }
 
 
-
-
-export default connect(mapStateToProps )(NavBar)
+export default connect(mapStateToProps,mapDispatchToProps )(NavBar)

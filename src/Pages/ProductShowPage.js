@@ -8,7 +8,7 @@ class ProductShowPage extends Component {
        
         return (
             
-            <div style={{border: '1px black solid'}}>
+            <div>
                 <div>
                     <ProductShowCard history={this.props.history}/>
                 </div>

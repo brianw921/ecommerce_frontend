@@ -36,9 +36,9 @@ class ProductShowCard extends Component {
         
         return (
             
-            <div id="product-show-container">
+            <div className="modal">
                 
-                <div>
+                <div className="modal-content" >
                      <button  onClick={() => this.showModal()}> show Modal </button>
                    <Modal show={this.state.show}/>
                     

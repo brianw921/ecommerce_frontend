@@ -25,6 +25,12 @@ const loginUser = userObj => ({
     payload: userObj
 })
 
+export const logOut = () => dispatch => {
+    dispatch({type: "LOG_OUT"})
+    dispatch({type: "CLEAR_CART"})
+    localStorage.clear()
+}
+
 export const getUser = (user) => {
     return (dispatch) => {
         return fetch("http://localhost:3000/login" , {
@@ -36,17 +42,15 @@ export const getUser = (user) => {
         .then(r => r.json())
         .then( loginData => {
            console.log(loginData)
-            localStorage.setItem("token", loginData.token)
-            dispatch(loginUser(loginData.user))
-            
-             
-
-            if (loginData) {
-                return dispatch({type: "ADD_TO_CART", payload: loginData.user.cart})
-            } else {
-                return loginData.error
-            }
            
+           if (loginData.user) {
+                localStorage.setItem("token", loginData.token)
+                dispatch({type: "ADD_TO_CART", payload: loginData.user.cart})
+                return dispatch(loginUser(loginData.user))
+            } else if (loginData.error) {
+                dispatch({type: "ERROR_HANDLING", payload: loginData.error})
+            }
+            
         })
     }
 }
