@@ -21,6 +21,19 @@ import { connect } from 'react-redux';
         }
     }
 
+    sortProductsByCat = () => {
+        if (this.props.sortCategory === ""){
+            return this.props.products.filter( product => product.product_full_name.toLowerCase().includes(this.state.search.toLowerCase()))
+        } else {
+            let category = this.props.products 
+            let sorted = category.filter( (item) => {
+                return item.category === this.props.sortCategory
+            }
+            )
+            return sorted.filter(product => product.product_full_name.toLowerCase().includes(this.state.search.toLowerCase()))
+        }
+    } 
+
     handleChange = (e)=> {
         this.setState({ search: e.target.value })
     }

@@ -73,7 +73,8 @@ export const handleAnySort = (sortGender) => {
     }
 }
 
-export const handleSortCategory = (sortCategory) => {
+export const sortCategory = (sortCategory) => {
+    console.log(sortCategory)
     return (dispatch) => {
         dispatch({type: "SORT_CATEGORY", payload: sortCategory})
     }
