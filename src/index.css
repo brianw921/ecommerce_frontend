@@ -12,6 +12,25 @@ code {
     monospace;
 }
 
+#login
+{
+  display: flex;
+  flex-direction: column;
+}
+
+#login label
+{
+  margin-bottom: 8px;
+}
+
+#login input
+{
+  margin-bottom: 12px;
+}
+
+#login input[type="submit"] {
+  margin-top: 16px;
+}
 
 /* #nav-bar {
   display: flex;
@@ -75,6 +94,8 @@ code {
 
 #filter-bar {
   column-fill: .8rem;
+  border: 2px solid black;
+  height: 100%;
 }
 
 #products {
@@ -85,6 +106,11 @@ code {
   margin-left: 24px;
 }
 
+#product-container
+{
+  overflow: scroll;
+}
+
 #search-form
 {
   display: flex;
@@ -92,8 +118,20 @@ code {
 }
 
 .product-card {
-  width: 30%;
-  
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-name
+{
+  font-size: 0.5em;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
 }
 
 .row

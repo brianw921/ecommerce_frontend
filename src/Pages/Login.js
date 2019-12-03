@@ -39,32 +39,30 @@ class Login extends Component {
         
         const { username, password } = this.state
         
-        // if (localStorage.token) {
-        //     this.props.history.push("/")
-        // }
-        return (
-
+        return  (
             <>
-                <h1>Login</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Username:  </label>
-                    <input 
-                        type="text"
-                        name="username"
-                        value={username}
-                        onChange={this.handleChange}
-                    />
-                    <label>Password:  </label>
-                    <input 
-                        type="text"
-                        name="password"
-                        value={password}
-                        onChange={this.handleChange}
-                    />
-                    <input type="submit"/>
-                    
-                </form>
-                {this.props.error && this.props.error} 
+                <div >
+                    <h1>Login</h1>
+                    <form id="login" onSubmit={this.handleSubmit}>
+                        <label>Username:  </label>
+                        <input 
+                            type="text"
+                            name="username"
+                            value={username}
+                            onChange={this.handleChange}
+                        />
+                        <label>Password:  </label>
+                        <input 
+                            type="text"
+                            name="password"
+                            value={password}
+                            onChange={this.handleChange}
+                        />
+                        <input type="submit"/>
+                        
+                    </form>
+                    {this.props.error && this.props.error} 
+                </div>
             </>
         )
     }

@@ -74,9 +74,16 @@ export const handleAnySort = (sortGender) => {
 }
 
 export const sortCategory = (sortCategory) => {
-    console.log(sortCategory)
+    
     return (dispatch) => {
         dispatch({type: "SORT_CATEGORY", payload: sortCategory})
+    }
+}
+
+export const handleSortPrice = (priceValue) => {
+    return (dispatch) => {
+    console.log("SortPrice?", priceValue)
+        dispatch({type: "SORT_PRICE", payload: priceValue})
     }
 }
 

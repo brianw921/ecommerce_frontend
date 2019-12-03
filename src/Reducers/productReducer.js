@@ -3,6 +3,7 @@ const initialState = {
     showProduct: {}, //MAY NOT NEED THIS
     sortGender: "",
     sortCategory: "",
+    sortPrice: "",
     cart: [],
     search: ""
     
@@ -19,15 +20,19 @@ export default (state = initialState , action) => {
             products: action.payload
         }
         case 'SHOW_PRODUCT':
-        console.log("TWO", action.payload)
+        
         return {...state, showProduct: action.payload}
         
         case 'SORT_GENDER':
         return {...state, sortGender: action.payload, sortCategory: ""}
 
         case 'SORT_CATEGORY':
-        console.log(action.payload)
+        
         return {...state, sortCategory: action.payload}
+
+        case 'SORT_PRICE':
+        console.log(action.payload)
+        return {...state, sortPrice: action.payload}
 
         case 'ADD_TO_CART':
         return {...state, cart: action.payload.order_items}

@@ -35,8 +35,32 @@ import { connect } from 'react-redux';
             )
             return sorted.filter(product => product.product_full_name.toLowerCase().includes(this.state.search.toLowerCase()))
         }
-
     } 
+
+    sortProductsByPrice = (array) => {
+        if (this.props.sortPrice === "Lowest"){
+            return array.sort( (productA, productB) => {
+                if (productA.original_price > productB.original_price) {
+                    return 1
+                } else if (productA.original_price < productB.original_price) {
+                    return -1
+                } else {
+                    return 0
+                }
+            }
+            )
+        } else {
+            return array.sort((productA, productB) => {
+                if ( productA.original_price < productB.original_price ){
+                    return 1
+                } else if ( productA.original_price > productB.original_price){
+                    return -1
+                } else {
+                    return 0
+                }
+            })
+        } 
+    }
 
     handleChange = (e)=> {
         this.setState({ search: e.target.value })
@@ -46,7 +70,7 @@ import { connect } from 'react-redux';
     
 
     productComponents = () => {
-        return this.sortProducts().map( (product) => {
+        return this.sortProductsByPrice(this.sortProducts()).map((product) => {
                     return <ProductCard key={product.id}
                                         product={product}
                                         history = {this.props.history}
@@ -54,8 +78,6 @@ import { connect } from 'react-redux';
         })
     }
     render() {
-    console.log(this.props)
-  
         return (
             <div id="product-container">
             <form id="search-form" onSubmit={this.handleSubmit}>
@@ -79,7 +101,8 @@ const mapStateToProps = (state) => {
     return {
         products: state.productStore.products,
         sortGender: state.productStore.sortGender,
-        sortCategory: state.productStore.sortCategory
+        sortCategory: state.productStore.sortCategory,
+        sortPrice: state.productStore.sortPrice
     }
 }
 

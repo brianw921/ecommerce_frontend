@@ -12,8 +12,6 @@ class MainComponent extends Component {
         this.props.fetchProducts()
     }
     
-
-    
     render() {
         return (
             <div style={{border: "1px black solid"}}>

@@ -1,17 +1,35 @@
 import React, { Component } from 'react'
+import { handleSortPrice} from '../Redux/actions'
+import { connect } from 'react-redux';
 
-export default class Sort extends Component {
+class Sort extends Component {
+
+    handleSort = (e) => {
+        this.props.setSortPrice(e.target.value)
+    }
+
     render() {
+        
         return (
             <div>
-                This is sort
-                <select>
-                    <option value="All">All</option>
-                    <option value="Weight">Weight</option>
-                    <option value="Name">Name</option>
+                <h1>Sort By</h1>
+                <select onChange={this.handleSort}> 
+                    <option value="Highest">Highest to Lowest</option>
+                    <option value="Lowest">Lowest to Highest</option>
                 </select>
                 
             </div>
         )
     }
 }
+
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setSortPrice: (priceValue) => dispatch(handleSortPrice(priceValue))
+    }
+}
+
+
+export default connect(null,mapDispatchToProps)(Sort);
