@@ -7,16 +7,13 @@ class NavBar extends Component {
 
     handleLogout = (e) => {
         e.preventDefault()
-        
         this.props.logOut()
-        
     }
     render() {
         
         const { cart, user } = this.props
         
-        console.log(user)
-        console.log(cart)
+        
         
         return (
             <nav id="nav-bar">

@@ -23,11 +23,7 @@ class App extends React.Component {
           <FilterBar history={this.props.history}/>
           <Switch>
               <Route exact path="/" component={MainComponent}/>
-              
-              
-              
               <Route path="/profile" component={UserProfile}/>  
-              
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/items/:id" component={ProductShowPage}/>

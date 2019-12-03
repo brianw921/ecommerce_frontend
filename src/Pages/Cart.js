@@ -6,7 +6,6 @@ class Cart extends Component {
 
     submitOrder = (e) => {
         e.preventDefault()
-        // console.log("BRIAN", this.props.cart)
         this.props.submitOrder(this.props.cart)
     }
 
@@ -17,9 +16,17 @@ class Cart extends Component {
         
     }
     render() {
-        
+        console.log(this.props)
         const { cart } = this.props
-        
+
+        const cartPrice = () => {
+            let totalPrice = 0
+            cart.forEach((cartItem) => {
+                debugger
+                totalPrice += cartItem.item.original_price
+            })
+            return totalPrice
+        }
         return (
             <div>
                 <button onClick={this.submitOrder}>Checkout</button>
@@ -29,6 +36,9 @@ class Cart extends Component {
                         return <li>{cartItem.item.product_full_name} USD {cartItem.item.original_price}
                          <button onClick={() => this.removeFromCart(cartItem)}>Remove from Cart</button></li>
                     })}
+                    <div>
+                        <h1>Total Price: <span>{cartPrice()}</span></h1>
+                    </div>
                 </ol>
                 
             </div>
