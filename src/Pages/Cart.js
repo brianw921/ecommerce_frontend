@@ -6,7 +6,7 @@ class Cart extends Component {
 
     submitOrder = (e) => {
         e.preventDefault()
-        this.props.submitOrder(this.props.cart)
+        this.props.submitOrder()
     }
 
     removeFromCart = (cartItem) => {
@@ -22,7 +22,7 @@ class Cart extends Component {
         const cartPrice = () => {
             let totalPrice = 0
             cart.forEach((cartItem) => {
-                debugger
+                
                 totalPrice += cartItem.item.original_price
             })
             return totalPrice
@@ -54,7 +54,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        submitOrder: (orderObj) => dispatch(submitOrder(orderObj)),
+        submitOrder: () => dispatch(submitOrder()),
         removeFromCart: (cartItemId) => dispatch(removeFromCart(cartItemId))
     }
 }

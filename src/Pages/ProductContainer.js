@@ -27,6 +27,7 @@ import { connect } from 'react-redux';
         } else {
             let category = this.props.products 
             let sorted = category.filter( (item) => {
+                
                 return item.category === this.props.sortCategory
             }
             )
@@ -42,7 +43,7 @@ import { connect } from 'react-redux';
     
 
     productComponents = () => {
-        return this.sortProducts().map( (product) => {
+        return this.sortProducts(this.sortProductsByCat()).map( (product) => {
                     return <ProductCard key={product.id}
                                         product={product}
                                         history = {this.props.history}

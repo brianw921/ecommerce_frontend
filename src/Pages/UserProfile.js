@@ -13,7 +13,7 @@ class UserShowPage extends Component {
 
             Here is your previous orders
             {user.orders.map( (order) => {
-                return console.log(order) 
+                return console.log("PAST ORDERS", order) 
             }
             )}
             

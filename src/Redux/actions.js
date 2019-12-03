@@ -129,25 +129,25 @@ export const removeFromCart = (cartItemId) => {
     }
 }
 
-export const submitOrder = (orderCartArr) => {
-    console.log(orderCartArr)
+export const submitOrder = () => {
     return (dispatch) => {
         return fetch("http://localhost:3000/orders", {
             method: "POST",
             headers: { "content-type": "application/json", accept: "application/json",
         "Authorization": 'bearer ' + localStorage.token
-        },
-            body: JSON.stringify({
+        }
+            // body: JSON.stringify({
                 
-                order: {
-                    cart: orderCartArr
-                }
-            })
+            //     order: {
+            //         cart: orderCartArr
+            //     }
+            // })
         })
         .then(r => r.json())
         .then(data => {
             console.log("BRIAN WONG", data)
             dispatch({type: "SUBMIT_ORDER", payload: data})
+            dispatch({type: "LOGIN_USER", payload: data})
         })
     }
 }

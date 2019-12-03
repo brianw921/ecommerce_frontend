@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { handleAnySort } from '../Redux/actions'
+import { handleAnySort , sortCategory } from '../Redux/actions'
 import { withRouter} from 'react-router'
 
 class Category extends Component {
@@ -43,7 +43,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setSortGender: (sortGender) => dispatch(handleAnySort(sortGender)),
-        setSortCategory: (sortCategory) => dispatch(handleAnySort(sortCategory))
+        setSortCategory: (category) => dispatch(sortCategory(category))
     }
 }
 
