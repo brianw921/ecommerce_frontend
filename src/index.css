@@ -77,17 +77,29 @@ code {
   column-fill: .8rem;
 }
 
-#product-container {
-  width: 70%;
+#products {
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: 24px;
 }
 
+#search-form
+{
+  display: flex;
+  width: 100%;
+}
+
 .product-card {
   width: 30%;
   
+}
+
+.row
+{
+  display: flex;
+  flex-direction: row;
 }
 
 #search-bar {

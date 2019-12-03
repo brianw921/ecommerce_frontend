@@ -21,15 +21,17 @@ class Category extends Component {
             <div>
                 <h1>Categories</h1>
                 
-                {/* <p onClick={() => this.props.setSortGender("")}>All</p> */}
+                
                 <p>Lowest to Highest</p>
+                <p onClick={() => this.handleSort("")}>All</p>
                 <p onClick={() => this.handleSort("M")}>Men</p>
-                    <p> </p>
                 <p onClick={() => this.handleSort("W")}>Women</p>
                 <p onClick={() => this.handleSort("K")}>Kids</p>
                 <p onClick={() => this.handleSort("")}>All</p>
                 <p onClick={() => this.handleSortCat("Performance")}>Performance</p>
-                {/* <p onClick={() => this.props.setSortCategory("Performance")}>Performance</p> */}
+                <p onClick={() => this.handleSortCat("Originals")}>Originals</p>
+                <p onClick={() => this.handleSortCat("Athletics")}>Athletics</p>
+                
             </div>
         )
     }

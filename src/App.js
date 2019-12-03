@@ -9,7 +9,6 @@ import NavBar from './Pages/NavBar'
 import FilterBar from './Pages/FilterBar'
 import OrderPopup from './Pages/OrderPopup'
 import Cart from './Pages/Cart'
-// import Category from './Pages/Category'
 import UserProfile from './Pages/UserProfile'
 
 
@@ -20,17 +19,19 @@ class App extends React.Component {
     
       <div>
           <NavBar/>
-          <FilterBar history={this.props.history}/>
-          <Switch>
-              <Route exact path="/" component={MainComponent}/>
-              <Route path="/profile" component={UserProfile}/>  
-              <Route path="/signup" component={Signup} />
-              <Route path="/login" component={Login} />
-              <Route path="/items/:id" component={ProductShowPage}/>
-              <Route path="/items/:id/addtoCart" component={OrderPopup}/>
-              <Route path='/cart' component={Cart}/>
-              
-          </Switch>
+          <div className="row">
+            <FilterBar history={this.props.history}/>
+            <Switch>
+                <Route exact path="/" component={MainComponent}/>
+                <Route path="/profile" component={UserProfile}/>  
+                <Route path="/signup" component={Signup} />
+                <Route path="/login" component={Login} />
+                <Route path="/items/:id" component={ProductShowPage}/>
+                <Route path="/items/:id/addtoCart" component={OrderPopup}/>
+                <Route path='/cart' component={Cart}/>
+                
+            </Switch>
+          </div>
       </div>
       
   );
