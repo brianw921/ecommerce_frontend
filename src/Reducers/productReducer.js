@@ -23,7 +23,7 @@ export default (state = initialState , action) => {
         return {...state, showProduct: action.payload}
         
         case 'SORT_GENDER':
-        return {...state, sortGender: action.payload}
+        return {...state, sortGender: action.payload, sortCategory: ""}
 
         case 'SORT_CATEGORY':
         console.log(action.payload)

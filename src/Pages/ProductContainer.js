@@ -9,11 +9,12 @@ import { connect } from 'react-redux';
     state = {
         search: ""
     }
+
     sortProducts = () => {
         if (this.props.sortGender === "") {
-            return this.props.products.filter(product => product.product_full_name.toLowerCase().includes(this.state.search.toLowerCase()))
+            return this.sortProductsByCat().filter(product => product.product_full_name.toLowerCase().includes(this.state.search.toLowerCase()))
         } else {
-             let category = this.props.products
+             let category = this.sortProductsByCat()
              let sorted = category.filter((item) => {  
                  return item.gender === this.props.sortGender  
             })
@@ -27,12 +28,13 @@ import { connect } from 'react-redux';
         } else {
             let category = this.props.products 
             let sorted = category.filter( (item) => {
-                
+                console.log(item)
                 return item.category === this.props.sortCategory
             }
             )
             return sorted.filter(product => product.product_full_name.toLowerCase().includes(this.state.search.toLowerCase()))
         }
+        
     } 
 
     handleChange = (e)=> {
@@ -43,7 +45,7 @@ import { connect } from 'react-redux';
     
 
     productComponents = () => {
-        return this.sortProducts(this.sortProductsByCat()).map( (product) => {
+        return this.sortProducts().map( (product) => {
                     return <ProductCard key={product.id}
                                         product={product}
                                         history = {this.props.history}
