@@ -3,8 +3,7 @@ const initialState = {
     showProduct: {}, //MAY NOT NEED THIS
     sortGender: "",
     cart: [],
-    search: "",
-    pastOrders: []
+    search: ""
     
 }
 
@@ -24,6 +23,9 @@ export default (state = initialState , action) => {
         
         case 'SORT_GENDER':
         return {...state, sortGender: action.payload}
+
+        case 'SORT_CATEGORY':
+        return {...state, sortCategory: action.payload}
 
         case 'ADD_TO_CART':
         return {...state, cart: action.payload.order_items}

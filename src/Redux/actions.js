@@ -73,6 +73,12 @@ export const handleAnySort = (sortGender) => {
     }
 }
 
+export const handleSortCategory = (sortCategory) => {
+    return (dispatch) => {
+        dispatch({type: "SORT_CATEGORY", payload: sortCategory})
+    }
+}
+
 export const showProduct = (item) => {
     return (dispatch) => {
         return fetch(`http://localhost:3000/items/${item.id}`)

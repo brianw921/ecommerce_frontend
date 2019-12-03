@@ -37,7 +37,7 @@ import { connect } from 'react-redux';
         })
     }
     render() {
-       
+    console.log(this.props)
   
         return (
             <>
@@ -60,8 +60,8 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
     return {
         products: state.productStore.products,
-        sortGender: state.productStore.sortGender
-        // sortCategory: state.productStore.sortCategory
+        sortGender: state.productStore.sortGender,
+        sortCategory: state.productStore.sortCategory
     }
 }
 
