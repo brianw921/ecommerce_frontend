@@ -10,11 +10,17 @@ import FilterBar from './Pages/FilterBar'
 import OrderPopup from './Pages/OrderPopup'
 import Cart from './Pages/Cart'
 import UserProfile from './Pages/UserProfile'
-
+import {connect} from 'react-redux'
+import { getUserPersist } from './Redux/actions'
 
 class App extends React.Component {
   
+  componentDidMount(){
+    
+    return localStorage.token ? this.props.getUserPersist(): null
+  }
   render() {
+    
     return (
     
       <div>
@@ -38,4 +44,9 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getUserPersist: () => dispatch(getUserPersist())
+  }
+}
+export default connect(null, mapDispatchToProps)(App);

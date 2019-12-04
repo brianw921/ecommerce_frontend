@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
-import { showProduct } from '../Redux/actions'
+import { showProduct } from '../Redux/actions';
+
 
 class UserProfilePreviousOrders extends Component {
 
@@ -11,12 +12,17 @@ class UserProfilePreviousOrders extends Component {
     }
 
     showPreviousOrders = () => {
-        const { order } = this.props 
+        const { order } = this.props
+        
+        const dateTime = order.datetime
+        
         return order.cart ? null : order.order_items.map((orderItem) => {
+            
             return (
                 <>
-                    <h1>You have purchased this on DATE/TIME</h1>
+                    <h1>You have purchased this on {new Date(dateTime).toDateString()}</h1>
                     <li onClick={ () => this.showProduct(orderItem) }>
+                        
                         <img src={orderItem.item.image} alt="" className="cart-img"/>{orderItem.item.product_full_name}
                     </li>
                         <h1>Total: {order.total_price}</h1>
@@ -34,10 +40,16 @@ class UserProfilePreviousOrders extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        currentUser: state.mainState.currentUser
+    }
+}
+
 const mapDispatchToProps = (dispatch) => {
     return {
         showProduct: (item) => dispatch(showProduct(item))
     }
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(UserProfilePreviousOrders))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserProfilePreviousOrders))

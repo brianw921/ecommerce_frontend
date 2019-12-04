@@ -56,6 +56,21 @@ export const getUser = (user) => {
     }
 }
 
+export const getUserPersist = () => {
+    return (dispatch) => {
+        return fetch("http://localhost:3000/auth", {
+            method: "GET",
+            headers: { "content-type": "application/json", "Authorization": "bearer " + localStorage.token}
+        })
+        .then( r => r.json())
+        .then( (user) => {
+            dispatch({type: "LOGIN_USER", payload: user})
+        }
+        )
+
+    }
+}
+
 export const fetchProducts = () => {
     return (dispatch) => {
         return fetch('http://localhost:3000/items')
