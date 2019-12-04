@@ -38,16 +38,9 @@ export default (state = initialState , action) => {
         return {...state, cart: action.payload.order_items}
 
         case "SEARCH":
-            
-             const productList = state.products.filter(p => p.product_full_name.toLowerCase().includes(action.payload.toLowerCase()))
-             
-             return {
-                 ...state,
-                //  products: productList,
-                 search: action.payload
-             }
+        return {...state,search: action.payload}
+
         case 'REMOVE_FROM_CART':
-        console.log("THREE", action.payload.id)
         return {...state, cart: [...handleRemoveFromCart([...state.cart], action.payload.id)]}
 
         case 'CLEAR_CART':
