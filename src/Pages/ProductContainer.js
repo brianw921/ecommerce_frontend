@@ -57,6 +57,10 @@ import { connect } from 'react-redux';
         } 
     }
 
+    handleTwentyProducts = () => {
+        return [...this.props.products].slice(this.props.productIndex, this.props.productIndex + 20)
+    }
+
    
    
 
@@ -69,7 +73,7 @@ import { connect } from 'react-redux';
         })
     }
     render() {
-
+        
         return (
             <div id="product-container">
                 <div id="products">
@@ -83,6 +87,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
     return {
         products: state.productStore.products,
+        productIndex: state.productStore.productIndex,
         sortGender: state.productStore.sortGender,
         sortCategory: state.productStore.sortCategory,
         sortPrice: state.productStore.sortPrice,

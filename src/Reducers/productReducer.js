@@ -1,6 +1,7 @@
 const initialState = {
     products: [],
-    showProduct: {}, //MAY NOT NEED THIS
+    productIndex: 0,
+    showProduct: {}, 
     sortGender: "",
     sortCategory: "",
     sortPrice: "",
