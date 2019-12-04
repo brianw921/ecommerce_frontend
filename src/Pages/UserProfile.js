@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import UserProfileCart from './UserProfileCart'
 
 
 class UserShowPage extends Component {
@@ -8,9 +9,9 @@ class UserShowPage extends Component {
         const {user } = this.props
       
         return (
-            <div style={{border: "1px solid black"}}>
-                Hello {user.name ? null: "Brian"}
-
+            <div>
+                Hello {user.name ? user.name: ", welcome to Abibas"} !
+                <UserProfileCart />
             Here is your previous orders
             {user.orders.map( (order) => {
                 return console.log("PAST ORDERS", order) 

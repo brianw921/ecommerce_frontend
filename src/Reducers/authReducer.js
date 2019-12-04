@@ -8,7 +8,6 @@ const initialState = {
 export default (state = initialState , action) => {
     switch(action.type) {
         case 'LOGIN_USER':
-        console.log("WHAT IS THE OBJECT", action.payload)
         return {...state, currentUser: action.payload}
         case 'ERROR_HANDLING':
         return {...state, error: action.payload}
