@@ -6,8 +6,7 @@ import {showProduct} from '../Redux/actions'
 
 class UserProfileCart extends Component {
 
-    showProduct = (e,item) => {
-        console.log("did I get clicked?",e.target)
+    showProduct = (item) => {
         this.props.showProduct(item)
         this.props.history.push(`/items/:id`)
     }
@@ -30,8 +29,7 @@ class UserProfileCart extends Component {
                 <h1>There are current {cart.length} items in your cart</h1>
                     <ol>
                         {cart.map((cartItem) => {
-                            console.log('CARTITEM.ID', cartItem)
-                        return <li onClick={(e) => this.showProduct(e,cartItem)}><img src={cartItem.item.image} alt="" className="cart-img"/> 
+                        return <li onClick={() => this.showProduct(cartItem)}><img src={cartItem.item.image} alt="" className="cart-img"/> 
                         {cartItem.item.product_full_name} -- USD {cartItem.item.original_price}</li>
                         })}
                     </ol>
