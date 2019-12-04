@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {Link } from 'react-router-dom'
-import {logOut} from "../Redux/actions"
+import {logOut , searchOrder} from "../Redux/actions"
+
 
 class NavBar extends Component {
 
+    
+
+    
     handleLogout = (e) => {
         e.preventDefault()
         this.props.logOut()
@@ -28,7 +32,7 @@ class NavBar extends Component {
                             <ul >
                                 
                                 <li><input aria-label="search" placeholder=" 🔍 This Search does not work yet"
-                                            value={null}></input></li>
+                                            value={this.props.search} onChange={(e) => this.props.searchOrder(e.target.value)}></input></li>
                                 <li><Link to="/cart">Cart {cart.length}</Link></li>
                                 {user.id? <><li><Link to="/profile">Profile</Link></li>
                                 <li><Link to="/" onClick={this.handleLogout}>Log Out</Link></li> </> : 
@@ -51,14 +55,15 @@ const mapStateToProps = (state) => {
     return {
         products: state.productStore.products,
         cart: state.productStore.cart,
-        search: state.productStore.search,
-        user: state.mainState.currentUser
+        user: state.mainState.currentUser,
+        search: state.productStore.search
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        logOut: () => dispatch(logOut())
+        logOut: () => dispatch(logOut()),
+        searchOrder: (searchTerm) => dispatch(searchOrder(searchTerm))
     }
 }
 

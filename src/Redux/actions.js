@@ -163,6 +163,13 @@ export const submitOrder = () => {
     }
 }
 
+export const searchOrder = (searchTerm) => {
+    console.log(searchTerm)
+    return (dispatch) => {
+        dispatch({type: "SEARCH", payload: searchTerm})
+    }
+}
+
 
 
 

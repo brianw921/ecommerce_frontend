@@ -20,7 +20,7 @@ class UserProfilePreviousOrders extends Component {
             
             return (
                 <>
-                    <h1>You have purchased this on {new Date(dateTime).toDateString()}</h1>
+                    <p>Order placed:  {new Date(dateTime).toDateString()}</p>
                     <li onClick={ () => this.showProduct(orderItem) }>
                         
                         <img src={orderItem.item.image} alt="" className="cart-img"/>{orderItem.item.product_full_name}

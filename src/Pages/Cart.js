@@ -29,7 +29,7 @@ class Cart extends Component {
         }
         return (
             <div>
-                <button onClick={this.submitOrder}>Checkout</button>
+                <h1>There are currently {cart.length} items in your Cart</h1>
                 <ol>
                     {cart.map((cartItem) => {
                         
@@ -40,7 +40,7 @@ class Cart extends Component {
                         <h1>Total Price: <span>{cartPrice()}</span></h1>
                     </div>
                 </ol>
-                
+                <button onClick={this.submitOrder}>Checkout</button>
             </div>
         )
     }
