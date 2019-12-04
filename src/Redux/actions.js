@@ -82,7 +82,6 @@ export const sortCategory = (sortCategory) => {
 
 export const handleSortPrice = (priceValue) => {
     return (dispatch) => {
-    console.log("SortPrice?", priceValue)
         dispatch({type: "SORT_PRICE", payload: priceValue})
     }
 }
@@ -92,7 +91,6 @@ export const showProduct = (item) => {
         return fetch(`http://localhost:3000/items/${item.id}`)
         .then(r => r.json())
         .then( (item) => {
-            console.log("ONE", item)
             dispatch({type: "SHOW_PRODUCT", payload: item})
             
         })
@@ -104,19 +102,18 @@ export const addToCart = (item, user) => {
     
     return (dispatch) => {
         fetch('http://localhost:3000/order_items', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' , Accept: 'application/json'},
-        body: JSON.stringify({
-            item_id: item.id,
-            order_id: user.cart.id
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' , Accept: 'application/json'},
+            body: JSON.stringify({
+                item_id: item.id,
+                order_id: user.cart.id
+            })
         })
-    })
-    .then(res => res.json())
-    .then((data) => {
-        
-        dispatch({type: "ADD_TO_CART", payload: data})
-    }
-    )
+        .then(res => res.json())
+        .then((item) => {
+            dispatch({type: "ADD_TO_CART", payload: item})
+        }  
+        )
     }
 }
 
@@ -132,7 +129,6 @@ export const removeFromCart = (cartItemId) => {
             console.log("TWO", data)
             dispatch({type: "REMOVE_FROM_CART", payload: data})
         })
-
     }
 }
 
@@ -141,18 +137,11 @@ export const submitOrder = () => {
         return fetch("http://localhost:3000/orders", {
             method: "POST",
             headers: { "content-type": "application/json", accept: "application/json",
-        "Authorization": 'bearer ' + localStorage.token
+            "Authorization": 'bearer ' + localStorage.token
         }
-            // body: JSON.stringify({
-                
-            //     order: {
-            //         cart: orderCartArr
-            //     }
-            // })
         })
         .then(r => r.json())
         .then(data => {
-            console.log("BRIAN WONG", data)
             dispatch({type: "SUBMIT_ORDER", payload: data})
             dispatch({type: "LOGIN_USER", payload: data})
         })

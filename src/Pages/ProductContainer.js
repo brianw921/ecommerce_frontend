@@ -15,8 +15,7 @@ import { connect } from 'react-redux';
             return this.sortProductsByCat().filter(product => product.product_full_name.toLowerCase().includes(this.state.search.toLowerCase()))
         } else {
              let category = this.sortProductsByCat()
-             let sorted = category.filter((item) => { 
-                 console.log(item) 
+             let sorted = category.filter((item) => {  
                  return item.gender === this.props.sortGender  
             })
             return sorted.filter(product => product.product_full_name.toLowerCase().includes(this.state.search.toLowerCase()))
@@ -29,7 +28,6 @@ import { connect } from 'react-redux';
         } else {
             let category = this.props.products 
             let sorted = category.filter( (item) => {
-                console.log(item)
                 return item.category === this.props.sortCategory
             }
             )
@@ -66,8 +64,6 @@ import { connect } from 'react-redux';
         this.setState({ search: e.target.value })
     }
    
-    
-    
 
     productComponents = () => {
         return this.sortProductsByPrice(this.sortProducts()).map((product) => {
@@ -78,6 +74,7 @@ import { connect } from 'react-redux';
         })
     }
     render() {
+
         return (
             <div id="product-container">
             <form id="search-form" onSubmit={this.handleSubmit}>
