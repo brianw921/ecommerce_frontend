@@ -24,6 +24,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-//Still need to map Dispatch to bring it back to CardContainer
+
 export default connect(mapStateToProps)(ProductShowPage)
 

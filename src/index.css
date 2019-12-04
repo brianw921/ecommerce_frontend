@@ -189,3 +189,7 @@ code {
   cursor: pointer;
 }
 
+.cart-img {
+  width: 5%;
+  height: auto;
+}
