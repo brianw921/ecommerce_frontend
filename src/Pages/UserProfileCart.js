@@ -9,7 +9,7 @@ class UserProfileCart extends Component {
     showProduct = (e,item) => {
         console.log("did I get clicked?",e.target)
         this.props.showProduct(item)
-        this.props.history.push(`/items/${e.target.dataset.id}`)
+        this.props.history.push(`/items/:id`)
     }
     
     render() {
@@ -31,7 +31,7 @@ class UserProfileCart extends Component {
                     <ol>
                         {cart.map((cartItem) => {
                             console.log('CARTITEM.ID', cartItem)
-                        return <li data-id={cartItem.id} onClick={(e) => this.showProduct(e,cartItem)}><img src={cartItem.item.image} alt="" className="cart-img"/> 
+                        return <li onClick={(e) => this.showProduct(e,cartItem)}><img src={cartItem.item.image} alt="" className="cart-img"/> 
                         {cartItem.item.product_full_name} -- USD {cartItem.item.original_price}</li>
                         })}
                     </ol>
