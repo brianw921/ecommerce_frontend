@@ -31,7 +31,7 @@ class NavBar extends Component {
                         <div className="navbar-navigation-items">
                             <ul >
                                 
-                                <li><input aria-label="search" placeholder=" 🔍 This Search does not work yet"
+                                <li><input aria-label="search" placeholder=" 🔍 Search"
                                             value={this.props.search} onChange={(e) => this.props.searchOrder(e.target.value)}></input></li>
                                 <li><Link to="/cart">Cart {cart.length}</Link></li>
                                 {user.id? <><li><Link to="/profile">Profile</Link></li>

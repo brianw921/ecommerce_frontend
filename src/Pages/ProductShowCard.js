@@ -42,7 +42,7 @@ class ProductShowCard extends Component {
                     <img src={image}  alt="product-img"/>
                     <h1>Description</h1>
                     <p>{description_headline}</p>
-                    <p> USD {original_price}</p>
+                    <h1><span>USD {original_price}</span></h1>
                     <ul>{description_bullets}</ul>
                     
                     

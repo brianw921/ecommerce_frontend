@@ -17,7 +17,7 @@ class ProductCard extends Component {
             <div className="product-card" onClick={this.productRedirect}>
                 <div style={{'height': '200px','backgroundImage': `url(${image})`, 'backgroundSize': 'contain', 'backgroundRepeat': 'no-repeat'}}></div>
                 <div className="product-name"><h1>{product_full_name}</h1></div>
-                <div><p> USD {original_price}</p></div>
+                <div><h1>USD {original_price}</h1></div>
             </div>
             
         )

@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 class OrderPopup extends Component {
 
     viewCart = () => {
-        console.log("view CArt")
         this.props.history.push('/cart')
     }
 
@@ -27,13 +26,12 @@ class OrderPopup extends Component {
             <>
             <div className="modal" id="modal">
                 <div className="modal-content">
-                    <span className="close">fsadf</span>
                     <h1> YOU HAVE SUCCESSFULLY ADDED TO CART</h1>
                     <h1>{product_full_name}</h1>
                         <img src={image}  alt="product-img"/>
                         <h1>Description</h1>
                         <p>{description_headline}</p>
-                        <p> USD {original_price}</p>
+                        <h1> USD <span>{original_price}</span></h1> 
                         <ul>{description_bullets}</ul>
                         {/* <button onClick={this.orderPopup}>Add To Cart</button> */}
                         
