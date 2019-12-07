@@ -32,7 +32,6 @@ export default (state = initialState , action) => {
         return {...state, sortCategory: action.payload}
 
         case 'SORT_PRICE':
-        console.log(action.payload)
         return {...state, sortPrice: action.payload}
 
         case 'ADD_TO_CART':

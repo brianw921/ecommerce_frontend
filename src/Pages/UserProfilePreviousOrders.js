@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { showProduct } from '../Redux/actions';
+import moment from 'moment'
 
 
 class UserProfilePreviousOrders extends Component {
 
+    
     showProduct = (item) => {
         this.props.showProduct(item)
         this.props.history.push(`/items/:id`)
@@ -14,27 +16,27 @@ class UserProfilePreviousOrders extends Component {
     showPreviousOrders = () => {
         const { order } = this.props
         
-        const dateTime = order.datetime
+        
         
         return order.cart ? null : order.order_items.map((orderItem) => {
             
             return (
-                <>
-                    <p>Order placed:  {new Date(dateTime).toDateString()}</p>
-                    <li onClick={ () => this.showProduct(orderItem) }>
+                    <li onClick={ () => this.showProduct(orderItem) } key={orderItem.id}>
                         
                         <img src={orderItem.item.image} alt="" className="cart-img"/>{orderItem.item.product_full_name}
                     </li>
-                        <h1>Total: {order.total_price}</h1>
-                </>
             )
         })
     }
     render() {
+        const { order } = this.props
         
+        const dateTime = order.datetime
         return (
             <div>
+                <p>Order placed:  {moment(dateTime).format('LL')}</p>
                 {this.showPreviousOrders()}
+                <h1>Total: {order.total_price}</h1>
             </div>
         )
     }

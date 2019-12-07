@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import OrderPopup from './OrderPopup'
 import { addToCart } from '../Redux/actions';
 import { Link } from 'react-router-dom'
+import { withRouter} from 'react-router'
 
 
 class ProductShowCard extends Component {
@@ -35,21 +36,25 @@ class ProductShowCard extends Component {
         
         return (
             
-            <div className="modal">
+            <div className="modal" >
                 
                 <div className="modal-content" >
-                    <h1>{product_full_name}</h1>
-                    <img src={image}  alt="product-img"/>
-                    <h1>Description</h1>
-                    <p>{description_headline}</p>
-                    <h1><span>USD {original_price}</span></h1>
-                    <ul>{description_bullets}</ul>
+                    <img src={image} style={{'width': '300px', 'height': '300px'}}  alt="product-img"/>
+                    <div style={{'width': '70%'}}>
+                        <h2>{product_full_name}</h2>
+                        <h3>Description</h3>
+                        <p>{description_headline}</p>
+                        <h4><span>USD {original_price}</span></h4>
+                        <ul>{description_bullets}</ul>
+                        {this.props.user.username ? <button onClick={this.orderPopup}>Add To Cart</button> 
+                        : 
+                        <Link to="/login"><button>Please Login in to Purchase</button></Link>
+                        }
+                    </div>
+                    <div className="close-btn" onClick={this.props.history.goBack}>x</div>
                     
                     
-                    {this.props.user.username ? <button onClick={this.orderPopup}>Add To Cart</button> 
-                    : 
-                    <Link to="/login"><button>Please Login in to Purchase</button></Link>
-                    }
+                    
                    
                     
                 </div>
@@ -75,4 +80,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductShowCard)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProductShowCard))

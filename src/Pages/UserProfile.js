@@ -4,18 +4,18 @@ import UserProfileCart from './UserProfileCart'
 import UserProfilePreviousOrders from './UserProfilePreviousOrders'
 
 
-class UserShowPage extends Component {
+class UserProfile extends Component {
     render() {
         
         const {user } = this.props
       
         return (
-            <div>
+            <div style={{"padding": "50px"}}>
                 Hello {user.name ? user.name: ", welcome to Abibas"} !
                 <UserProfileCart />
             <h1>View Previous Orders</h1>
             {user.orders.map( (order) => {
-                return <UserProfilePreviousOrders order={order}/>
+                return <UserProfilePreviousOrders order={order} key={order.id}/>
             }
             )}
             
@@ -30,4 +30,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(UserShowPage)
+export default connect(mapStateToProps)(UserProfile)

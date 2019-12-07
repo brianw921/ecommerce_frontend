@@ -26,17 +26,21 @@ class OrderPopup extends Component {
             <>
             <div className="modal" id="modal">
                 <div className="modal-content">
-                    <h1> YOU HAVE SUCCESSFULLY ADDED TO CART</h1>
-                    <h1>{product_full_name}</h1>
-                        <img src={image}  alt="product-img"/>
-                        <h1>Description</h1>
+                    <div>
+                        <div className="close-btn" onClick={this.props.history.goBack}>x</div>
+                        <h2> YOU HAVE SUCCESSFULLY ADDED TO CART</h2>
+                        <h2>{product_full_name}</h2>
+                        <img src={image} style={{'width': '300px', 'height': '300px'}} alt="product-img"/>
+                        <h3>Description</h3>
                         <p>{description_headline}</p>
-                        <h1> USD <span>{original_price}</span></h1> 
+                        <h4> USD <span>{original_price}</span></h4> 
                         <ul>{description_bullets}</ul>
                         {/* <button onClick={this.orderPopup}>Add To Cart</button> */}
-                        
+                    </div>
+                    <div>
                         <button onClick={this.viewCart}>View Cart</button>
                         <button onClick={this.redirect}>Continue Shopping</button>
+                    </div>
                 </div>
             </div>
             
