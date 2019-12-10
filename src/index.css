@@ -39,6 +39,7 @@ code {
   background: black;
   display: flex;
   align-items: center;
+  border: solid black;
 }
 
 #nav-bar-logo {
@@ -113,6 +114,7 @@ code {
 {
   overflow: scroll;
   margin-top: 32px;
+  
 }
 
 #search-form
@@ -168,7 +170,6 @@ code {
   width: 100%;
   height: auto;
   background: rgba(55, 55, 55, 0.7);
-  border: 1px solid red;
   position: absolute;
   top: 0;
   left: 0;
@@ -224,4 +225,23 @@ code {
 .cart-img {
   width: 5%;
   height: auto;
+}
+
+#filter-bar {
+  border-right: 2px solid black;
+  padding-right: 50px;
+  padding-left: 30px;
+  padding-bottom: 100%;
+}
+
+.cart-show-page {
+  width: 100%;
+  height: auto;
+  
+}
+
+#cart-price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
