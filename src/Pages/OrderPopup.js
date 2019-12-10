@@ -42,7 +42,7 @@ class OrderPopup extends Component {
                         <button onClick={this.redirect}>Continue Shopping</button>
 
                     </div>
-                    <div className="close-btn" onClick={this.props.history.goBack}>x</div>
+                    <div className="close-btn" onClick={this.props.history.goBack}>X</div>
                 </div>
             </div>
             

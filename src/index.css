@@ -237,6 +237,31 @@ code {
 .cart-show-page {
   width: 100%;
   height: auto;
+}
+
+.cart-show-page h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-show-page-items {
+  border: solid black;
+  text-align: left;
+  
+}
+
+.cart-show-page-items li {
+  display: flex;
+  justify-content: flex;
+}
+
+.cart-show-page-items li div{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-show-page-items img{
+  border: solid black;
   
 }
 
@@ -244,4 +269,8 @@ code {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+#remove-from-cart {
+  padding-right: 20px;
 }

@@ -39,18 +39,19 @@ class Cart extends Component {
         return (
             <div className="cart-show-page">
                 <h1>{shoppingCartItems()} </h1>
-                <div>
+                <div className="cart-show-page-items">
                     <ol>
                         {cart.map((cartItem) => {
-                            console.log(cartItem)
+                            
                             return <li>
+                            <div onClick={() => this.removeFromCart(cartItem)} id="remove-from-cart">X</div> 
                             <img src={cartItem.item.image} alt="" className="cart-img"/>- {cartItem.item.product_full_name} USD {cartItem.item.original_price}
-                            <button onClick={() => this.removeFromCart(cartItem)}>Remove from Cart</button></li>
+                            </li>
                         })}
                     </ol>
                 </div>
                 <div className="cart-price">
-                        <h1>Total Price: <span>{cartPrice()}</span></h1>
+                        <h2>Total Price: <span>{cartPrice()}</span></h2>
                 </div>
                 <button onClick={this.submitOrder}>Checkout</button>
             </div>
