@@ -10,10 +10,8 @@ class Cart extends Component {
     }
 
     removeFromCart = (cartItem) => {
-            
-        
+
         this.props.removeFromCart(cartItem.id)
-        
     }
     render() {
         console.log(this.props)
@@ -51,9 +49,11 @@ class Cart extends Component {
                     </ol>
                 </div>
                 <div className="cart-price">
-                        <h2>Total Price: <span>{cartPrice()}</span></h2>
+                        <h2>Total Price: <span>{cartPrice()}</span></h2>   
                 </div>
-                <button onClick={this.submitOrder}>Checkout</button>
+                <div className="button">
+                    <button onClick={this.submitOrder}><span>CHECKOUT</span></button>
+                </div>
             </div>
         )
     }

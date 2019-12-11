@@ -152,6 +152,15 @@ code {
   width: 50%;
 }
 
+#product-show-card-img {
+  width: 300px;
+  height: 300px;
+}
+
+#product-show-card-details {
+  width: 70%;
+}
+
 .row
 {
   display: flex;
@@ -265,11 +274,31 @@ code {
   
 }
 
-#cart-price {
+.cart-price {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button button {
+  color: white;
+  border: solid black;
+  background: black;
+}
+
+.button button:hover{
+  background: white;
+  color: black;
+}
+
+
+
+
 
 #remove-from-cart {
   padding-right: 20px;
