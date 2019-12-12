@@ -15,14 +15,9 @@ class UserProfilePreviousOrders extends Component {
 
     showPreviousOrders = () => {
         const { order } = this.props
-        
-        
-        
         return order.cart ? null : order.order_items.map((orderItem) => {
-            
             return (
-                    <li onClick={ () => this.showProduct(orderItem) } key={orderItem.id}>
-                        
+                    <li onClick={ () => this.showProduct(orderItem) } key={orderItem.id}> 
                         <img src={orderItem.item.image} alt="" className="cart-img"/>{orderItem.item.product_full_name}
                     </li>
             )
@@ -35,8 +30,10 @@ class UserProfilePreviousOrders extends Component {
         return (
             <div className="up-prev-orders">
                 <p>Order placed:  {moment(dateTime).format('LL')}</p>
-                {this.showPreviousOrders()}
-                <h1>Total: {order.total_price}</h1>
+                <ol>
+                    {this.showPreviousOrders()}
+                </ol>
+                <h1>Total: <span>USD {order.total_price}</span> </h1>
             </div>
         )
     }

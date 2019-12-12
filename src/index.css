@@ -304,6 +304,20 @@ code {
 .user-profile {
   padding: 50px;
 }
+
+.user-profile-cart h2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.up-prev-orders{
+  border: solid black;
+}
+
+.up-prev-orders h1{
+  display: flex;
+  justify-content: flex-end;
+}
 .user-profile-cart {
   border: solid black;
 }
