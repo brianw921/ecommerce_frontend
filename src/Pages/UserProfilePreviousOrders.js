@@ -33,7 +33,7 @@ class UserProfilePreviousOrders extends Component {
         
         const dateTime = order.datetime
         return (
-            <div>
+            <div className="up-prev-orders">
                 <p>Order placed:  {moment(dateTime).format('LL')}</p>
                 {this.showPreviousOrders()}
                 <h1>Total: {order.total_price}</h1>

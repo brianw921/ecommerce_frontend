@@ -12,9 +12,18 @@ class UserProfileCart extends Component {
     }
     
     render() {
+        const shoppingCartItems = () => {
+            if (cart.length === 0 ){
+                return "Your Shopping Cart is Empty"
+            } else if (cart.length === 1) {
+                return `There is currently ${cart.length} item in your Cart`
+            } else {
+                return `There are currently ${cart.length} items in your Cart`
+            }
+        }
         
         const { cart } = this.props
-        console.log( "WHAT IS CART", cart)
+
         const cartPrice = () => {
             let totalPrice = 0
             cart.forEach((cartItem) => {
@@ -25,18 +34,21 @@ class UserProfileCart extends Component {
         }
         
         return (
-            <div>
-                <h1>There are current {cart.length} items in your cart</h1>
+            <div className="user-profile-cart">
+                <h1>{shoppingCartItems()}</h1>
+                    <div>
                     <ol>
                         {cart.map((cartItem) => {
                         return <li onClick={() => this.showProduct(cartItem)}><img src={cartItem.item.image} alt="" className="cart-img"/> 
                         {cartItem.item.product_full_name} -- USD {cartItem.item.original_price}</li>
                         })}
                     </ol>
+                    </div>
                 <h2> Your Total is: <span>{cartPrice()}</span></h2>
-                <Link to="/cart"><button> Update Cart</button></Link>
-                <Link to="/"><button> Continue Shopping</button></Link>
-
+                <div className="button">
+                    <Link to="/cart"><button> Update Cart</button></Link>
+                    <Link to="/"><button> Continue Shopping</button></Link>
+                </div>
 
             </div>
         )

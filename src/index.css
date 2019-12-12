@@ -297,9 +297,13 @@ code {
 }
 
 
-
-
-
 #remove-from-cart {
   padding-right: 20px;
+}
+
+.user-profile {
+  padding: 50px;
+}
+.user-profile-cart {
+  border: solid black;
 }

@@ -10,8 +10,8 @@ class UserProfile extends Component {
         const {user } = this.props
       
         return (
-            <div style={{"padding": "50px"}}>
-                Hello {user.name ? user.name: ", welcome to Abibas"} !
+            < div className ="user-profile" >
+                <h1>Hello {user.name ? user.name: ", welcome to Abibas"} !</h1>
                 <UserProfileCart />
             <h1>View Previous Orders</h1>
             {user.orders.map( (order) => {
