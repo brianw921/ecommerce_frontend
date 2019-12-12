@@ -22,6 +22,8 @@ class Signup extends Component {
     }
     render() {
         const { username, password , name} = this.state
+
+        console.log(this.props.error)
         return (
             <>
             <h1>Signup</h1>
@@ -49,6 +51,7 @@ class Signup extends Component {
                 />
                 <input type="submit"/>
             </form>
+            {this.props.error && this.props.error[0]} 
             </>
         )
     }

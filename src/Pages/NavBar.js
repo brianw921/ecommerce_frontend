@@ -6,20 +6,32 @@ import {logOut , searchOrder} from "../Redux/actions"
 
 class NavBar extends Component {
 
-    
-
-    
     handleLogout = (e) => {
         e.preventDefault()
         this.props.logOut()
     }
+
+    
     render() {
         
         const { cart, user } = this.props
         
-        
+        const userDefined = () => {
+        if (this.props.user === undefined) {
+            return <>
+                <li><Link to="/profile">Profile</Link></li>
+                <li><Link to="/" onClick={this.handleLogout}>Log Out</Link></li> 
+            </>
+        } else if (this.props.user.id) {
+            return <>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/signup">Sign Up</Link></li>
+            </>
+        }
+        }
         
         return (
+            
             <nav id="nav-bar">
                     <div></div>
                     <div id="nav-bar-logo">
@@ -34,18 +46,24 @@ class NavBar extends Component {
                                 <li><input aria-label="search" placeholder=" 🔍 Search"
                                             value={this.props.search} onChange={(e) => this.props.searchOrder(e.target.value)}></input></li>
                                 <li><Link to="/cart">Cart {cart.length}</Link></li>
-                                {user.id? <><li><Link to="/profile">Profile</Link></li>
-                                <li><Link to="/" onClick={this.handleLogout}>Log Out</Link></li> </> : 
+                                {/* {user.id? 
                                 <>
-                                <li><Link to="/login">Login</Link></li>
-                                <li><Link to="/signup">Sign Up</Link></li>
+                                    <li><Link to="/profile">Profile</Link></li>
+                                    <li><Link to="/" onClick={this.handleLogout}>Log Out</Link></li> 
+                                </> : 
+                                <>
+                                    <li><Link to="/login">Login</Link></li>
+                                    <li><Link to="/signup">Sign Up</Link></li>
                                 </>
+                                } */}
+                                {
+                                    userDefined
                                 }
-                                
                             </ul>
                         </div>
                     </div>
             </nav>
+                            
            
         )
     }

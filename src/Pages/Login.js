@@ -22,16 +22,8 @@ class Login extends Component {
          if (localStorage.token) {
              this.props.history.push("/")
          }
-         
-       
     }
-    // comnponentDidUpdate(){
-    //     console.log("LOGIN")
-    //     if (localStorage.token) {
-            
-    //         this.props.history.push("/")
-    //     }
-    // }
+ 
 
      
 
