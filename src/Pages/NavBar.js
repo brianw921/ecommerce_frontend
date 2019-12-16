@@ -11,24 +11,13 @@ class NavBar extends Component {
         this.props.logOut()
     }
 
+
     
     render() {
         
         const { cart, user } = this.props
         
-        const userDefined = () => {
-        if (this.props.user === undefined) {
-            return <>
-                <li><Link to="/profile">Profile</Link></li>
-                <li><Link to="/" onClick={this.handleLogout}>Log Out</Link></li> 
-            </>
-        } else if (this.props.user.id) {
-            return <>
-                <li><Link to="/login">Login</Link></li>
-                <li><Link to="/signup">Sign Up</Link></li>
-            </>
-        }
-        }
+       
         
         return (
             
@@ -46,7 +35,7 @@ class NavBar extends Component {
                                 <li><input aria-label="search" placeholder=" 🔍 Search"
                                             value={this.props.search} onChange={(e) => this.props.searchOrder(e.target.value)}></input></li>
                                 <li><Link to="/cart">Cart {cart.length}</Link></li>
-                                {/* {user.id? 
+                                {user && user.id ? 
                                 <>
                                     <li><Link to="/profile">Profile</Link></li>
                                     <li><Link to="/" onClick={this.handleLogout}>Log Out</Link></li> 
@@ -55,10 +44,8 @@ class NavBar extends Component {
                                     <li><Link to="/login">Login</Link></li>
                                     <li><Link to="/signup">Sign Up</Link></li>
                                 </>
-                                } */}
-                                {
-                                    userDefined
                                 }
+                                {this.props.error && this.props.error }
                             </ul>
                         </div>
                     </div>

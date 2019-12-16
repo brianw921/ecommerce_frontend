@@ -23,7 +23,7 @@ class Signup extends Component {
     render() {
         const { username, password , name} = this.state
 
-        console.log(this.props.error)
+        console.log("ERROR", this.props.error)
         return (
             <>
             <h1>Signup</h1>

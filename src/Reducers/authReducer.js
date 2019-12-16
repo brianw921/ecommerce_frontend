@@ -1,9 +1,7 @@
 const initialState = {
     currentUser: {
-        
         orders: [],
-        error: "",
-        
+        error: [],
     }
 }
 
