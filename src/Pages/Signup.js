@@ -25,32 +25,34 @@ class Signup extends Component {
 
         return (
             <>
-            <h1>Signup</h1>
-            <form onSubmit={this.handleSubmit}>
-                <label>Username:  </label>
-                <input
-                    type="text"
-                    name="username"
-                    value={username}
-                    onChange={this.handleChange}
-                />
-                <label>Password:  </label>
-                <input
-                    type="text"
-                    name="password"
-                    value={password}
-                    onChange={this.handleChange}
-                />
-                <label>Name:  </label>
-                <input
-                    type="text"
-                    name="name"
-                    value={name}
-                    onChange={this.handleChange}
-                />
-                <input type="submit"/>
-            </form>
-            {this.props.error && this.props.error} 
+            <div className="signup">
+                <h1>Signup</h1>
+                <form onSubmit={this.handleSubmit}>
+                    <label>Username:  </label>
+                    <input
+                        type="text"
+                        name="username"
+                        value={username}
+                        onChange={this.handleChange}
+                    />
+                    <label>Password:  </label>
+                    <input
+                        type="text"
+                        name="password"
+                        value={password}
+                        onChange={this.handleChange}
+                    />
+                    <label>Name:  </label>
+                    <input
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={this.handleChange}
+                    />
+                    <input type="submit"/>
+                </form>
+                {this.props.error && this.props.error} 
+            </div>
             </>
         )
     }

@@ -12,24 +12,58 @@ code {
     monospace;
 }
 
-#login
-{
+.login{
+  border: solid black;
   display: flex;
+  
   flex-direction: column;
+  width: 100%;
+
 }
 
-#login label
-{
-  margin-bottom: 8px;
+.login h1{
+  display: flex;
+  justify-content: center;
 }
 
-#login input
-{
+
+.login label{
   margin-bottom: 12px;
 }
 
-#login input[type="submit"] {
-  margin-top: 16px;
+.login form {
+  border: solid red;
+  display:flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.login input {
+  display: flex;
+  width: 70%;
+  margin-bottom: 12px;
+  justify-content: flex-end;
+}
+
+.login input[type="submit"] {
+  width: 15%;
+  margin-top: 40px;
+  justify-content: center;
+  background: black;
+  color: white;
+  border: solid black;
+}
+
+.login input[type="submit"]:hover {
+ background: white;
+ color: black;
+}
+
+.signup {
+   border: solid black;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
 }
 
 
@@ -283,6 +317,7 @@ code {
 .button {
   display: flex;
   justify-content: flex-end;
+
 }
 
 .button button {

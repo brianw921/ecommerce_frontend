@@ -36,7 +36,7 @@ class Login extends Component {
         
         return  (
             <>
-                <div >
+                <div className='login'>
                     <h1>Login</h1>
                     <form id="login" onSubmit={this.handleSubmit}>
                         <label>Username:  </label>
@@ -56,7 +56,7 @@ class Login extends Component {
                         <input type="submit"/>
                         
                     </form>
-                    {/* {this.props.error && this.props.error}  */}
+                    {this.props.error && this.props.error} 
                 </div>
             </>
         )
