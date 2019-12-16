@@ -23,7 +23,6 @@ class Signup extends Component {
     render() {
         const { username, password , name} = this.state
 
-        console.log("ERROR", this.props.error)
         return (
             <>
             <h1>Signup</h1>
@@ -51,9 +50,15 @@ class Signup extends Component {
                 />
                 <input type="submit"/>
             </form>
-            {this.props.error && this.props.error[0]} 
+            {this.props.error && this.props.error} 
             </>
         )
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        error: state.mainState.error
     }
 }
 
@@ -63,4 +68,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Signup);
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

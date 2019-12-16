@@ -13,7 +13,7 @@ export const userPostFetch = (user) => {
         .then( (userObj) => {
             console.log("USEROBJ", userObj)
             if (userObj.error){ 
-                dispatch(loginUser(userObj.error))
+                dispatch({type: "ERROR_HANDLING", payload: userObj.error})
             } else {
             localStorage.setItem("token" , userObj.jwt)
             dispatch(loginUser(userObj.user))

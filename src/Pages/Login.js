@@ -19,9 +19,12 @@ class Login extends Component {
         e.preventDefault()
         
         this.props.getUser(this.state)
+        // if (this.props.error){
+        //     return this.props.error
+        // }
          if (localStorage.token) {
-             this.props.history.push("/")
-         }
+            this.props.history.push("/")
+         } 
     }
  
 
@@ -53,7 +56,7 @@ class Login extends Component {
                         <input type="submit"/>
                         
                     </form>
-                    {this.props.error && this.props.error} 
+                    {/* {this.props.error && this.props.error}  */}
                 </div>
             </>
         )
