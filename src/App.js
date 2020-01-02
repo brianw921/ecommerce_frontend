@@ -3,7 +3,7 @@ import './App.css';
 import {Switch, Route} from 'react-router-dom'
 import Signup from './Pages/Signup'
 import Login from './Pages/Login'
-import MainComponent from './Pages/MainComponent'
+import MainComponent from './MainComponent/MainComponent'
 import ProductShowPage from './Pages/ProductShowPage'
 import NavBar from './Pages/NavBar'
 import FilterBar from './Pages/FilterBar'
