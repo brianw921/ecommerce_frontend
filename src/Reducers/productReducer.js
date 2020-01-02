@@ -13,13 +13,8 @@ const initialState = {
 export default (state = initialState , action) => {
     
     switch(action.type) {
-        
         case 'PRODUCT_LIST':
-        
-        return {
-            ...state,
-            products: action.payload
-        }
+        return {...state, products: action.payload }
         case 'SHOW_PRODUCT':
         
         return {...state, showProduct: action.payload}
