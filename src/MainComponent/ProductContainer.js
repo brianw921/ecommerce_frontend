@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ProductCard from './ProductCard.js/index.js'
+import ProductCard from '../MainComponent/ProductCard.js'
 import { connect } from 'react-redux';
 
  
