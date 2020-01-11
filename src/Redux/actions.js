@@ -122,7 +122,7 @@ export const showProduct = (item) => {
 export const addToCart = (item, user) => {
     
     return (dispatch) => {
-        fetch(`${url}order_items`, {
+        fetch(`${deployed}order_items`, {
 
             method: 'POST',
             headers: { 'Content-Type': 'application/json' , Accept: 'application/json'},
@@ -143,7 +143,7 @@ export const addToCart = (item, user) => {
 
 export const removeFromCart = (cartItemId) => {
     return (dispatch) => {
-        return fetch(`${url}order_items/${cartItemId}`, {
+        return fetch(`${deployed}order_items/${cartItemId}`, {
             method: "DELETE"
         })
         .then(r => r.json())
@@ -156,7 +156,7 @@ export const removeFromCart = (cartItemId) => {
 
 export const submitOrder = () => {
     return (dispatch) => {
-        return fetch(`${url}orders`, {
+        return fetch(`${deployed}orders`, {
             method: "POST",
             headers: { "content-type": "application/json", accept: "application/json",
             "Authorization": 'bearer ' + localStorage.token
