@@ -1,7 +1,10 @@
+// const url = "http://localhost:3000/"
+const deployed = "https://protected-eyrie-60550.herokuapp.com/"
+
 export const userPostFetch = (user) => {
     console.log("actions", user)
     return (dispatch) => {
-        return fetch("http://localhost:3000/users", {
+        return fetch(`${deployed}users` , {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +39,7 @@ export const logOut = () => dispatch => {
 
 export const getUser = (user) => {
     return (dispatch) => {
-        return fetch("http://localhost:3000/login" , {
+        return fetch(`${deployed}login`, {
         method: 'POST',
         headers: { "Content-type": "application/json", 
                 Accept : "application/json"},
@@ -61,7 +64,7 @@ export const getUser = (user) => {
 
 export const getUserPersist = () => {
     return (dispatch) => {
-        return fetch("http://localhost:3000/auth", {
+        return fetch(`${deployed}auth`, {
             method: "GET",
             headers: { "content-type": "application/json", "Authorization": "bearer " + localStorage.token}
         })
@@ -76,7 +79,7 @@ export const getUserPersist = () => {
 
 export const fetchProducts = () => {
     return (dispatch) => {
-        return fetch('http://localhost:3000/items')
+        return fetch(`${deployed}items`)
         .then(r => r.json())
         .then((data) => {
            dispatch({type: "PRODUCT_LIST", payload: data})
@@ -106,7 +109,7 @@ export const handleSortPrice = (priceValue) => {
 
 export const showProduct = (item) => {
     return (dispatch) => {
-        return fetch(`http://localhost:3000/items/${item.id}`)
+        return fetch(`${deployed}items/${item.id}`)
         .then(r => r.json())
         .then( (item) => {
             dispatch({type: "SHOW_PRODUCT", payload: item})
@@ -119,7 +122,8 @@ export const showProduct = (item) => {
 export const addToCart = (item, user) => {
     
     return (dispatch) => {
-        fetch('http://localhost:3000/order_items', {
+        fetch(`${url}order_items`, {
+
             method: 'POST',
             headers: { 'Content-Type': 'application/json' , Accept: 'application/json'},
             body: JSON.stringify({
@@ -139,7 +143,7 @@ export const addToCart = (item, user) => {
 
 export const removeFromCart = (cartItemId) => {
     return (dispatch) => {
-        return fetch(`http://localhost:3000/order_items/${cartItemId}`, {
+        return fetch(`${url}order_items/${cartItemId}`, {
             method: "DELETE"
         })
         .then(r => r.json())
@@ -152,7 +156,7 @@ export const removeFromCart = (cartItemId) => {
 
 export const submitOrder = () => {
     return (dispatch) => {
-        return fetch("http://localhost:3000/orders", {
+        return fetch(`${url}orders`, {
             method: "POST",
             headers: { "content-type": "application/json", accept: "application/json",
             "Authorization": 'bearer ' + localStorage.token
