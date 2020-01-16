@@ -1,10 +1,26 @@
 ## Abibas
 
 [View Live Site Here](https://abibas.netlify.com/)
-## About
-Abibas is an e-commerce application where you can purchase sporting goods based the popular Adidas. I choose do E-commerce because the application allows for a shopping experience by offer wider variety of options so that the user. I partitioned Abibas through a 2 week sprint in which I used used Ruby on Rails for the backend, and React, Redux for the frontend. These included, implementing user authentication, extracting and displaying inventory information from a known company. 
+<implement screen shot here>
 
-Planned wire frame, implemented back
+## About
+Abibas is an e-commerce application where you can purchase sporting goods based the popular Adidas. I choose do E-commerce because the application allows for a shopping experience by offer wider variety of options so that the user. I built Abibas through a 2 week sprint in which I used used Ruby on Rails for the backend, and React, Redux for the frontend. I partitioned it through 6 phrases which includes, designing the schema, implementing user authentication, extracting and displaying inventory information from a known company, handling transactions, and creating filtering and searching functions.
+<put more screen shots here>
+## Technologies
+
+* Frontend: React, Redux
+* Backend: Ruby on Rails, PostgreSQL
+* Inventory Data: Addidas API from APIdojo (APIdojo.net)
+
+## Features
+
+### User Authentication
+User Authentication is implemented using JWT auth and Bcrypt gem. Using rails validations, it will automatically contain error information in which I then display it
+
+<load user auth picture>
+
+### Inventory Information
+I used a live real-time Adidas API from 
 
 You can narrow your search for a particular item based on its filters on the side bar, or through its search bar.
 
