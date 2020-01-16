@@ -24,8 +24,8 @@ I used a live real-time Adidas API from API Dojo, through RapidAPI.com to retrie
 
 <LOAD SCREEN SHOT HERE>
 
-### Displaying product information 
-Due to the limited scale of my project, I made it so that the user must login in order to make a purchase. I implemented how 
+### Handling Transactions
+Due to the limited scale of my project, upon registration there will be a cart dediciated to that user so that information will be saved and 
 
 
 
