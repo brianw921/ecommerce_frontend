@@ -15,14 +15,19 @@ Abibas is an e-commerce application where you can purchase sporting goods based 
 ## Features
 
 ### User Authentication
-User Authentication is implemented using JWT auth and Bcrypt gem. Using rails validations, it will automatically contain error information in which I then display it
+User Authentication is implemented using JWT auth and Bcrypt gem. Using rails validations, it will automatically contain error information in which I then display it. Utilizing local storage tokens.
 
 <load user auth picture>
 
 ### Inventory Information
-I used a live real-time Adidas API from 
+I used a live real-time Adidas API from API Dojo, through RapidAPI.com to retrieve adidas inventory information. Due to the limited scale of my project, I selected only some of the attributes that I want to use to build a basic minimal viable product of an E-commerce website. Because I can only make a limited amount of calls within the API, I retrieved the information via the backend and stored it within Postgres and upload it within Heroku.
 
-You can narrow your search for a particular item based on its filters on the side bar, or through its search bar.
+<LOAD SCREEN SHOT HERE>
+
+### Displaying product information 
+Due to the limited scale of my project, I made it so that the user must login in order to make a purchase. I implemented how 
+
+
 
 
 
