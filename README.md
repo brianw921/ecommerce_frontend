@@ -15,7 +15,7 @@ Abibas is an e-commerce application where you can purchase sporting goods based 
 ## Features
 
 ### User Authentication
-User Authentication is implemented using JWT auth and Bcrypt gem. Using rails validations, it will automatically contain error information in which I then display it. Utilizing local storage tokens.
+User Authentication is implemented using JWT auth and Bcrypt gem. Using rails validations, it will automatically contain error information in which I then display it. 
 
 <load user auth picture>
 
@@ -25,46 +25,20 @@ I used a live real-time Adidas API from API Dojo, through RapidAPI.com to retrie
 <LOAD SCREEN SHOT HERE>
 
 ### Handling Transactions
-Due to the limited scale of my project, upon registration there will be a cart dediciated to that user so that information will be saved and 
+Due to the limited scale of my project, I disigned it so that the user must be logged in inorder for them to make a purchase. Upon registration there will be a cart dediciated to that user that will allow them to store products and revisit the website when they want to finalize their order. Once the person makes the purchase, the information will be saved and they can view their past purchases
+
+<LOAD SCREEN SHOT HERE>
+
+### Displaying Product information
+Once an item is clicked, a modal will popup and provide options that will allow the user to either add the item to the cart or continue shopping. Whenever there is a product information, upon clicking that item it will always display the item. 
 
 
+<LOAD SCREEN SHOT HERE>
+
+### Filter and Search Bar
+In order to allow for a more convinent user 
 
 
-
-Prerequisites
-What things you need to install the software and how to install them
-
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-Give the example
-And repeat
-
-until finished
-End with an example of getting some data out of the system or using it for a little demo
-
-Running the tests
-Explain how to run the automated tests for this system
-
-Break down into end to end tests
-Explain what these tests test and why
-
-Give an example
-And coding style tests
-Explain what these tests test and why
-
-Give an example
-Deployment
-Add additional notes about how to deploy this on a live system
-
-Built With
-Rails
-React
-Redux
-Vanilla CSS
 
 
 
