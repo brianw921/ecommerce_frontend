@@ -36,17 +36,10 @@ Once an item is clicked, a modal will popup and provide options that will allow 
 <LOAD SCREEN SHOT HERE>
 
 ### Filter and Search Bar
-In order to allow for a more convinent user 
+In order to allow for a more convinent user experience, the can filter products to narrow their search for a particular product. Users can filter based on price, gender, and category. They can also search for the product they want within the prospective category after filtering. 
 
+<LOAD SCREEN SHOT HERE>
 
-
-
-
-Authors
-Brian Wong
-
-License
-
-
-Acknowledgments
-Thank you to the Instructors and Coaches who helped me along the way to completing this project
+### Future features
+* A more comprehensive cart that updates quantity for duplicate items
+* Implement Stripe API to process transactions
