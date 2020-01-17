@@ -21,13 +21,14 @@ User Authentication is implemented using JWT auth and Bcrypt gem. Using an encry
 ### Inventory Information
 I used a live real-time Adidas API from API Dojo, through RapidAPI.com to retrieve adidas inventory information. Due to the limited scale of my project, I selected only some of the attributes that I want to use to build a basic minimal viable product of an E-commerce website. Because I can only make a limited amount of calls within the API, I retrieved the information via the backend and stored it within Postgres and upload it within Heroku.
 
+```
 response = RestClient::Request.execute(
   method: :get,
   url: 'https://apidojo-adidas-v1.p.rapidapi.com/products/v2/list?lang=en-US&limit=1000&url=men',
   headers: {"X-RapidAPI-Host": "apidojo-adidas-v1.p.rapidapi.com",
     "x-rapidapi-key": ENV["NYT_API_KEY"]}
 )
-```
+
 product_data = JSON.parse(response)["_embedded"]["products"]
 
 product_data.each do |dataInfo|
@@ -55,6 +56,8 @@ Once an item is clicked, a modal will popup and provide options that will allow 
 
 ### Filter and Search Bar
 In order to allow for a more convinent user experience, the can filter products to narrow their search for a particular product. Users can filter based on price, gender, and category. They can also search for the product they want within the prospective category after filtering. 
+
+![Abibas Filter and Search](Sort.gif)
 
 
 

@@ -57,13 +57,11 @@ import { connect } from 'react-redux';
         } 
     }
 
-    handleTwentyProducts = () => {
-        return [...this.props.products].slice(this.props.productIndex, this.props.productIndex + 20)
-    }
+    // handleTwentyProducts = () => {
+    //     return [...this.props.products].slice(this.props.productIndex, this.props.productIndex + 20)
+    // }
 
    
-   
-
     productComponents = () => {
         return this.sortProductsByPrice(this.sortProducts()).map((product) => {
                     return <ProductCard key={product.id}
