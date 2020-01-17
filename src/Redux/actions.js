@@ -1,5 +1,5 @@
-// const url = "http://localhost:3000/"
-const deployed = "https://protected-eyrie-60550.herokuapp.com/"
+const deployed = "http://localhost:3000/"
+// const deployed = "https://protected-eyrie-60550.herokuapp.com/"
 
 export const userPostFetch = (user) => {
     console.log("actions", user)

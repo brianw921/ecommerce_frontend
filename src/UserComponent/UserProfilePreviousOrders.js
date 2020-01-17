@@ -17,9 +17,11 @@ class UserProfilePreviousOrders extends Component {
         const { order } = this.props
         return order.cart ? null : order.order_items.map((orderItem) => {
             return (
+                <ul>
                     <li onClick={ () => this.showProduct(orderItem) } key={orderItem.id}> 
                         <img src={orderItem.item.image} alt="" className="cart-img"/>{orderItem.item.product_full_name}
                     </li>
+                </ul>
             )
         })
     }
