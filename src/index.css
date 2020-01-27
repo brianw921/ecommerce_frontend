@@ -96,6 +96,10 @@ code {
  color: black;
 }
 
+.sign-up-error {
+  color: red;
+}
+
 #nav-bar {
   position: flex;
   width: 100%;
