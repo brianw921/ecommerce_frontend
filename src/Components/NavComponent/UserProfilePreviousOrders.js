@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
-import { showProduct } from '../Redux/actions';
+import { showProduct } from '../../Redux/actions';
 import moment from 'moment'
 
 

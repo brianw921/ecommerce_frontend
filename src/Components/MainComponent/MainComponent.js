@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ProductContainer from './ProductContainer'
 
 import { connect } from 'react-redux';
-import { fetchProducts } from '../Redux/actions';
+import { fetchProducts } from '../../Redux/actions';
 
 
 class MainComponent extends Component {

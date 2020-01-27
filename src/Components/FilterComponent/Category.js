@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { handleAnySort , sortCategory } from '../Redux/actions'
+import { handleAnySort , sortCategory } from '../../Redux/actions'
 import { withRouter} from 'react-router'
 
 class Category extends Component {

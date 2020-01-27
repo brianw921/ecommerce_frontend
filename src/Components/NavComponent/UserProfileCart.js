@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {Link } from 'react-router-dom'
 import { withRouter} from 'react-router'
-import {showProduct} from '../Redux/actions'
+import {showProduct} from '../../Redux/actions'
 
 class UserProfileCart extends Component {
 

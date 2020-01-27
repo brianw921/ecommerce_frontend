@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {Link } from 'react-router-dom'
-import {logOut , searchOrder} from "../Redux/actions"
+import {logOut , searchOrder} from '../../Redux/actions'
 
 
 class NavBar extends Component {

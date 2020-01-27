@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { submitOrder , removeFromCart} from '../Redux/actions';
+import { submitOrder , removeFromCart} from '../../Redux/actions';
 
 class Cart extends Component {
 

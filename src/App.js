@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import {Switch, Route} from 'react-router-dom'
-import Signup from './UserComponent/Signup'
-import Login from './UserComponent/Login'
-import MainComponent from './MainComponent/MainComponent'
+import Signup from './Components/UserComponent/Signup'
+import Login from './Components/UserComponent/Login'
+import MainComponent from './Components/MainComponent/MainComponent'
 import ProductShowPage from './Pages/ProductShowPage'
-import NavBar from './NavComponent/NavBar'
-import FilterBar from './FilterComponent/FilterBar'
+import NavBar from './Components/NavComponent/NavBar'
+import FilterBar from './Components/FilterComponent/FilterBar'
 import OrderPopup from './Pages/OrderPopup'
-import Cart from './NavComponent/Cart'
-import UserProfile from './NavComponent/UserProfile'
+import Cart from './Components/NavComponent/Cart'
+import UserProfile from './Components/NavComponent/UserProfile'
 import {connect} from 'react-redux'
 import { getUserPersist } from './Redux/actions'
 

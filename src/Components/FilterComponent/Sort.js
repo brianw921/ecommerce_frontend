@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { handleSortPrice} from '../Redux/actions'
+import { handleSortPrice} from '../../Redux/actions'
 import { connect } from 'react-redux';
 
 class Sort extends Component {
