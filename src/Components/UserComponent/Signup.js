@@ -38,7 +38,7 @@ class Signup extends Component {
                     <p className="error-msg">{this.props.error && this.props.error}</p>
                     <label>Password:  </label>
                     <input
-                        type="text"
+                        type="password"
                         name="password"
                         value={password}
                         onChange={this.handleChange}
