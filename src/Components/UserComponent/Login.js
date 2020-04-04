@@ -17,14 +17,10 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        
         this.props.getUser(this.state)
-        // if (this.props.error){
-        //     return this.props.error
-        // }
-         if (localStorage.token) {
+        if (localStorage.token) {
             this.props.history.push("/")
-         } 
+        } 
     }
  
 

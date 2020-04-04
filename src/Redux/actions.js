@@ -2,7 +2,6 @@
 const deployed = "https://protected-eyrie-60550.herokuapp.com/"
 
 export const userPostFetch = (user) => {
-    console.log("actions", user)
     return (dispatch) => {
         return fetch(`${deployed}users` , {
             method: "POST",
@@ -12,7 +11,7 @@ export const userPostFetch = (user) => {
             },
             body: JSON.stringify(user)
         })
-        .then( r => r.json())
+        .then(r => r.json())
         .then( (userObj) => {
             console.log("USEROBJ", userObj)
             if (userObj.error){ 

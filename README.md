@@ -7,8 +7,8 @@ Abibas is an e-commerce application where you can purchase sporting goods based 
 
 ## Technologies
 
-* Frontend: React, Redux
-* Backend: Ruby on Rails, PostgreSQL
+* Frontend: React, Redux, Vanilla CSS
+* Backend: Ruby on Rails, PostgreSQL, Serializers
 * Inventory Data: Addidas API from APIdojo (APIdojo.net)
 
 ## Features

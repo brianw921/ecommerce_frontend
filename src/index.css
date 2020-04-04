@@ -96,7 +96,8 @@ code {
  color: black;
 }
 
-.sign-up-error {
+.error-msg {
+  border: solid black;
   color: red;
 }
 
