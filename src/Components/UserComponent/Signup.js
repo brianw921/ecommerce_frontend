@@ -26,7 +26,7 @@ class Signup extends Component {
         return (
             <>
             <div className="signup">
-                <h1>Signup</h1>
+                <h1>Sign up</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Username:  </label>
                     <input
@@ -35,7 +35,7 @@ class Signup extends Component {
                         value={username}
                         onChange={this.handleChange}
                     />
-                    <p className="error-msg">{this.props.error && this.props.error}</p>
+                    {/* <p className="error-msg">{this.props.error && this.props.error}</p> */}
                     <label>Password:  </label>
                     <input
                         type="password"
