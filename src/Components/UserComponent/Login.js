@@ -33,27 +33,28 @@ class Login extends Component {
         return  (
             <>
                 <div className='login'>
-                    <div></div>
-                    <h1>Login</h1>
-                        <form onSubmit={this.handleSubmit}>
-                            <label>Username:  </label>
-                            <input 
-                                type="text"
-                                name="username"
-                                value={username}
-                                onChange={this.handleChange}
-                            />
-                            <label>Password:  </label>
-                            <input 
-                                type="password"
-                                name="password"
-                                value={password}
-                                onChange={this.handleChange}
-                            />
-                            <input type="submit"/>
-                            
-                        </form>
-                    {this.props.error && this.props.error} 
+                    <div className="login-container">
+                        <h1>Login</h1>
+                            <form onSubmit={this.handleSubmit}>
+                                <label>Username:  </label>
+                                <input 
+                                    type="text"
+                                    name="username"
+                                    value={username}
+                                    onChange={this.handleChange}
+                                />
+                                <label>Password:  </label>
+                                <input 
+                                    type="password"
+                                    name="password"
+                                    value={password}
+                                    onChange={this.handleChange}
+                                />
+                                <input type="submit"/>
+                                
+                            </form>
+                        {this.props.error && this.props.error} 
+                    </div>
                 </div>
             </>
         )
