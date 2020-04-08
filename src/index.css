@@ -130,7 +130,6 @@ code {
 }
 
 #nav-bar-items ul {
-  
   list-style: none;
   margin: 0;
   padding: 0; 
@@ -182,7 +181,7 @@ code {
 #filter-bar {
   column-fill: .8rem;
   
-  height: 100%;
+  height: flex;
 }
 
 #products {
@@ -244,9 +243,9 @@ code {
   width: 70%;
 }
 
-.row
-{
+.row{
   display: flex;
+  width: 100%;
   flex-direction: row;
 }
 
@@ -323,7 +322,7 @@ code {
   border-right: 2px solid black;
   padding-right: 50px;
   padding-left: 30px;
-  padding-bottom: 100%;
+  /* padding-bottom: 100%; */
 }
 
 .cart-show-page {
