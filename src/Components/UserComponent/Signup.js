@@ -26,34 +26,35 @@ class Signup extends Component {
         return (
             <>
             <div className="signup">
-                <h1>Sign up</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Username:  </label>
-                    <input
-                        type="text"
-                        name="username"
-                        value={username}
-                        onChange={this.handleChange}
-                    />
-                    {/* <p className="error-msg">{this.props.error && this.props.error}</p> */}
-                    <label>Password:  </label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={this.handleChange}
-                    />
+                <div className="signup-container">
+                    <h1>Sign up</h1>
+                    <form onSubmit={this.handleSubmit}>
+                        <label>Username:  </label>
+                        <input
+                            type="text"
+                            name="username"
+                            value={username}
+                            onChange={this.handleChange}
+                        />
+                        {/* <p className="error-msg">{this.props.error && this.props.error}</p> */}
+                        <label>Password:  </label>
+                        <input
+                            type="password"
+                            name="password"
+                            value={password}
+                            onChange={this.handleChange}
+                        />
 
-                    <label>Name:  </label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={name}
-                        onChange={this.handleChange}
-                    />
-                    <input type="submit"/>
-                </form>
-                 
+                        <label>Name:  </label>
+                        <input
+                            type="text"
+                            name="name"
+                            value={name}
+                            onChange={this.handleChange}
+                        />
+                        <input type="submit"/>
+                    </form>
+                </div> 
             </div>
             </>
         )

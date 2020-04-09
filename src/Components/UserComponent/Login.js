@@ -34,9 +34,14 @@ class Login extends Component {
             <>
                 <div className='login'>
                     <div className="login-container">
-                        <h1>Login</h1>
-                            <form onSubmit={this.handleSubmit}>
-                                <label>Username:  </label>
+                            <form className="login-form" onSubmit={this.handleSubmit}>
+                                <span className="login-form-title">
+                                    Account Login
+                                </span>
+
+                                <span className="login-txt">
+                                    Username
+                                </span>
                                 <input 
                                     type="text"
                                     name="username"

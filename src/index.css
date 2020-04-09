@@ -33,7 +33,11 @@ code {
   width: 560px;
   background: white;
   border-radius: 10px;
-  position: relative
+  position: relative;
+  padding-top: 100px;
+  padding-right: 55px;
+ 
+  padding-bottom: 100px;
 }
 
 .login h1{
@@ -42,12 +46,30 @@ code {
 }
 
 
-
-.login form {
+.login-form {
   display: flex;
-  padding-left: 300px;
+  padding: 20%;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
+}
+
+.login-form-title{
+  font-family: Arial;
+  font-size: 30px;
+  color: #555555;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+.login-txt{
+   font-family: Arial;
+   font-size: 13px;
+   color: #555555;
+   line-height: 1.4;
+   text-transform: uppercase;
 }
 
 .login input {
@@ -72,10 +94,17 @@ code {
 }
 
 .signup {
-   border: solid black;
+   /* border: solid black; */
    display: flex;
    flex-direction: column;
    width: 100%;
+}
+
+.signup-container{
+    width: 560px;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
 }
 
 .signup h1{
