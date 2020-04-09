@@ -295,6 +295,8 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: arial;
+  font-size: 10px;
 }
 
 .product-card:hover
@@ -311,6 +313,7 @@ code {
 .product-name
 {
   font-size: 0.5em;
+  font-family: arial;
   height: auto;
   display: flex;
   flex-direction: row;
