@@ -176,6 +176,7 @@ code {
   width: 70%;
   margin-bottom: 12px;
   justify-content: flex-end;
+  padding: 10px;
 }
 
 .signup input[type="submit"] {
