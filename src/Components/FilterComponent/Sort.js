@@ -12,7 +12,7 @@ class Sort extends Component {
         
         return (
             <div>
-                <h1>Sort By</h1>
+                <span className="sort">Sort By</span>
                 <select onChange={this.handleSort}> 
                     <option value="Highest">Highest to Lowest</option>
                     <option value="Lowest">Lowest to Highest</option>

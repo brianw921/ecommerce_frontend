@@ -19,7 +19,7 @@ class Category extends Component {
         
         return (
             <div>
-                <h1>Categories </h1>
+                <span className="category">Category</span>
                 <p onClick={() => this.handleSort("")}>All</p>
                 <p onClick={() => this.handleSort("M")}>Men</p>
                 <p onClick={() => this.handleSort("W")}>Women</p>

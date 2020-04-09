@@ -402,12 +402,7 @@ code {
   height: auto;
 }
 
-#filter-bar {
-  border-right: 2px solid black;
-  padding-right: 50px;
-  padding-left: 30px;
-  /* padding-bottom: 100%; */
-}
+
 
 .cart-show-page {
   width: 100%;
@@ -487,4 +482,35 @@ code {
 }
 .user-profile-cart {
   border: solid black;
+}
+
+#filter-bar {
+  /* border-right: 2px solid black; */
+  padding-right: 50px;
+  padding-left: 30px;
+  padding-top: 30px;
+  /* padding-bottom: 100%; */
+}
+
+.category{
+  font-family: Arial;
+  font-size: 25px;
+  color: #555555;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+.sort{
+  padding-top: 50px;
+  font-family: Arial;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: left;
+  width: 100%;
+  display: block;
 }
