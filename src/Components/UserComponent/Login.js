@@ -39,22 +39,31 @@ class Login extends Component {
                                     Account Login
                                 </span>
 
-                                <span className="login-txt">
+                                <span className="login-txt" >
                                     Username
                                 </span>
-                                <input 
-                                    type="text"
-                                    name="username"
-                                    value={username}
-                                    onChange={this.handleChange}
-                                />
-                                <label>Password:  </label>
-                                <input 
-                                    type="password"
-                                    name="password"
-                                    value={password}
-                                    onChange={this.handleChange}
-                                />
+
+                                <div className="login-wrap">
+                                    <input 
+                                        className="input-wrap"
+                                        type="text"
+                                        name="username"
+                                        value={username}
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
+                                 <span className="login-txt">
+                                    Password
+                                </span>
+                                <div >
+                                    <input 
+                                        className="input-wrap"
+                                        type="password"
+                                        name="password"
+                                        value={password}
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
                                 <input type="submit"/>
                                 
                             </form>

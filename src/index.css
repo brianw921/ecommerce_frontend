@@ -70,6 +70,22 @@ code {
    color: #555555;
    line-height: 1.4;
    text-transform: uppercase;
+   padding-bottom: 11px;
+}
+
+.input-wrap {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+}
+
+@media (max-width: 576px) {
+  .login-wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .login input {
@@ -77,15 +93,18 @@ code {
   width: 70%;
   margin-bottom: 12px;
   justify-content: flex-end;
+  padding: 10px;
 }
 
 .login input[type="submit"] {
   width: 15%;
-  margin-top: 40px;
+  margin-top: 10%;
   justify-content: center;
   background: black;
   color: white;
   border: solid black;
+  font-family: Arial;
+  padding: 10px;
 }
 
 .login input[type="submit"]:hover {
@@ -94,17 +113,30 @@ code {
 }
 
 .signup {
-   /* border: solid black; */
-   display: flex;
-   flex-direction: column;
-   width: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+
+    background-color: #ebebeb;
 }
 
 .signup-container{
     width: 560px;
-    background: #fff;
+    background: white;
     border-radius: 10px;
     position: relative;
+    padding-top: 100px;
+    padding-right: 55px;
+
+    padding-bottom: 100px;
 }
 
 .signup h1{
@@ -127,12 +159,14 @@ code {
 }
 
 .signup input[type="submit"] {
-  width: 15%;
-  margin-top: 40px;
-  justify-content: center;
-  background: black;
-  color: white;
-  border: solid black;
+    width: 15%;
+    margin-top: 10%;
+    justify-content: center;
+    background: black;
+    color: white;
+    border: solid black;
+    font-family: Arial;
+    padding: 10px;
 }
 
 .signup input[type="submit"]:hover {
