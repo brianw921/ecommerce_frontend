@@ -28,7 +28,10 @@ class Signup extends Component {
             <div className="signup">
                 <div className="signup-container">
                     <h1>Sign up</h1>
-                    <form onSubmit={this.handleSubmit}>
+                    <form className="signup-form" onSubmit={this.handleSubmit}>
+                        <span className="login-form-title">
+                            Account Login
+                         </span>
                         <label>Username:  </label>
                         <input
                             type="text"

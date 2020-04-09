@@ -139,6 +139,13 @@ code {
     padding-bottom: 100px;
 }
 
+.signup-form{
+  display: flex;
+  padding: 20%;
+  flex-direction: column;
+  width: 100%;
+}
+
 .signup h1{
   display: flex;
   justify-content: center;
