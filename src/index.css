@@ -255,8 +255,17 @@ code {
 
 
 .navbar-navigation-items li {
-  padding: 0 .5rem;
+  padding: 0 1rem;
+  font-family: arial;
+  font-size: 25px;
 }
+.navbar-navigation-items li input {
+  padding: 0 .1rem;
+  font-family: arial;
+  font-size: 20px;
+  padding: 3px;
+}
+
 
 
 #filter-bar {
@@ -518,5 +527,5 @@ code {
 .error-msg{
   color: red;
   font-family: Arial;
-  font-size: 15px;
+  font-size: 1px;
 }
