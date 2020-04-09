@@ -27,34 +27,51 @@ class Signup extends Component {
             <>
             <div className="signup">
                 <div className="signup-container">
-                    <h1>Sign up</h1>
+                    
                     <form className="signup-form" onSubmit={this.handleSubmit}>
-                        <span className="login-form-title">
-                            Account Login
-                         </span>
-                        <label>Username:  </label>
-                        <input
-                            type="text"
-                            name="username"
-                            value={username}
-                            onChange={this.handleChange}
-                        />
-                        {/* <p className="error-msg">{this.props.error && this.props.error}</p> */}
-                        <label>Password:  </label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={password}
-                            onChange={this.handleChange}
-                        />
+                        <span className="signup-form-title">
+                            Sign Up
+                        </span>
 
-                        <label>Name:  </label>
-                        <input
-                            type="text"
-                            name="name"
-                            value={name}
-                            onChange={this.handleChange}
-                        />
+                        <span className="signup-txt" >
+                            Name
+                        </span>
+                        <div className="signup-wrap">
+                            <input
+                                className="input-wrap"
+                                type="text"
+                                name="name"
+                                value={name}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                        <span className="signup-txt" >
+                            Username
+                        </span>
+                        <div className="signup-wrap">
+                            <input 
+                                className="input-wrap"
+                                type="text"
+                                name="username"
+                                value={username}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                        {/* <p className="error-msg">{this.props.error && this.props.error}</p> */}
+                        <span className="signup-txt" >
+                            Password
+                        </span>
+
+                        <div className="signup-wrap">
+                            <input
+                                className="input-wrap"
+                                type="password"
+                                name="password"
+                                value={password}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+
                         <input type="submit"/>
                     </form>
                 </div> 

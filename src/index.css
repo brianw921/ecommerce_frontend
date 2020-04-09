@@ -24,7 +24,6 @@ code {
  justify-content: center;
  align-items: center;
  padding: 15px;
-
  background-color: #ebebeb;
 
 }
@@ -36,7 +35,6 @@ code {
   position: relative;
   padding-top: 100px;
   padding-right: 55px;
- 
   padding-bottom: 100px;
 }
 
@@ -87,6 +85,12 @@ code {
     padding-right: 15px;
   }
 }
+@media (max-width: 576px) {
+  .signup-wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 
 .login input {
   display: flex;
@@ -124,7 +128,6 @@ code {
     justify-content: center;
     align-items: center;
     padding: 15px;
-
     background-color: #ebebeb;
 }
 
@@ -135,9 +138,9 @@ code {
     position: relative;
     padding-top: 100px;
     padding-right: 55px;
-
     padding-bottom: 100px;
 }
+
 
 .signup-form{
   display: flex;
@@ -146,17 +149,27 @@ code {
   width: 100%;
 }
 
-.signup h1{
-  display: flex;
-  justify-content: center;
+.signup-txt {
+  font-family: Arial;
+  font-size: 13px;
+  color: #555555;
+  line-height: 1.4;
+  text-transform: uppercase;
+  padding-bottom: 11px;
+}
+.signup-form-title {
+  font-family: Arial;
+  font-size: 30px;
+  color: #555555;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: left;
+  width: 100%;
+  display: block;
 }
 
-.signup form{
-  display: flex;
-  padding-left: 300px;
-  flex-direction: column;
-  width: 50%;
-}
+
+
 
 .signup input{
   display: flex;
@@ -166,14 +179,14 @@ code {
 }
 
 .signup input[type="submit"] {
-    width: 15%;
-    margin-top: 10%;
-    justify-content: center;
-    background: black;
-    color: white;
-    border: solid black;
-    font-family: Arial;
-    padding: 10px;
+  width: 15%;
+  margin-top: 10%;
+  justify-content: center;
+  background: black;
+  color: white;
+  border: solid black;
+  font-family: Arial;
+  padding: 10px;
 }
 
 .signup input[type="submit"]:hover {

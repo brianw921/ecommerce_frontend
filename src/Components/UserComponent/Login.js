@@ -52,9 +52,11 @@ class Login extends Component {
                                         onChange={this.handleChange}
                                     />
                                 </div>
-                                 <span className="login-txt">
+
+                                <span className="login-txt">
                                     Password
                                 </span>
+                                
                                 <div >
                                     <input 
                                         className="input-wrap"
