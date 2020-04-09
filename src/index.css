@@ -195,10 +195,7 @@ code {
  color: black;
 }
 
-.error-msg {
-  border: solid black;
-  color: red;
-}
+
 
 #nav-bar {
   position: flex;
@@ -516,4 +513,10 @@ code {
   text-align: left;
   width: 100%;
   display: block;
+}
+
+.error-msg{
+  color: red;
+  font-family: Arial;
+  font-size: 15px;
 }

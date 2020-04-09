@@ -66,10 +66,12 @@ class Login extends Component {
                                         onChange={this.handleChange}
                                     />
                                 </div>
+                                <div className="error-msg">
+                                    {this.props.error && this.props.error}
+                                </div>
                                 <input type="submit"/>
                                 
                             </form>
-                        {this.props.error && this.props.error} 
                     </div>
                 </div>
             </>
