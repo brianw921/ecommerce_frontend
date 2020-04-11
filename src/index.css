@@ -509,12 +509,14 @@ code {
    flex-wrap: wrap;
    justify-content: center;
    /* align-items: center; */
-   padding: 15px;
+   padding: 30px;
    background-color: #ebebeb;
    font-family: Arial;
 }
 
-
+.user-profile h1{
+  font-size: 30px;
+}
 
 
 .user-profile-cart{
@@ -527,11 +529,13 @@ code {
   padding-left: 100px;
   padding-bottom: 10px;
   font-family: Arial;
+  
 }
 
 .user-profile-cart h1{
   display: flex;
   justify-content: center;
+  font-family: Arial;
 }
 
 
@@ -549,11 +553,13 @@ code {
   padding-right: 100px;
   padding-left: 100px;
   padding-bottom: 100px;
+  
 }
 
 .up-prev-orders h1{
   display: flex;
   justify-content: flex-end;
+  font-family: Arial;
 }
 .user-profile-cart {
   border: solid black .5px;
