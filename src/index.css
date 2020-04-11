@@ -406,6 +406,21 @@ code {
   cursor: pointer;
 }
 
+
+.cart {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #ebebeb;
+}
 .cart-img {
   width: 5%;
   height: auto;
@@ -424,7 +439,7 @@ code {
 }
 
 .cart-show-page-items {
-  border: solid black;
+  border: solid black .05px;
   text-align: left;
   
 }

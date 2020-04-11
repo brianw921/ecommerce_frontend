@@ -35,24 +35,26 @@ class Cart extends Component {
             }
         }
         return (
-            <div className="cart-show-page">
-                <h1>{shoppingCartItems()} </h1>
-                <div className="cart-show-page-items">
-                    <ol>
-                        {cart.map((cartItem) => {
-                            
-                            return <li>
-                            <div onClick={() => this.removeFromCart(cartItem)} id="remove-from-cart">X</div> 
-                            <img src={cartItem.item.image} alt="" className="cart-img"/>- {cartItem.item.product_full_name} USD {cartItem.item.original_price}
-                            </li>
-                        })}
-                    </ol>
-                </div>
-                <div className="cart-price">
-                        <h2>Total Price: <span>{cartPrice()}</span></h2>   
-                </div>
-                <div className="button">
-                    <button onClick={this.submitOrder}><span>CHECKOUT</span></button>
+            <div className="cart">
+                <div className="cart-show-page">
+                    <h1>{shoppingCartItems()} </h1>
+                    <div className="cart-show-page-items">
+                        <ol>
+                            {cart.map((cartItem) => {
+                                
+                                return <li>
+                                <div onClick={() => this.removeFromCart(cartItem)} id="remove-from-cart">X</div> 
+                                <img src={cartItem.item.image} alt="" className="cart-img"/>- {cartItem.item.product_full_name} USD {cartItem.item.original_price}
+                                </li>
+                            })}
+                        </ol>
+                    </div>
+                    <div className="cart-price">
+                            <h2>Total Price: <span>{cartPrice()}</span></h2>   
+                    </div>
+                    <div className="button">
+                        <button onClick={this.submitOrder}><span>CHECKOUT</span></button>
+                    </div>
                 </div>
             </div>
         )
