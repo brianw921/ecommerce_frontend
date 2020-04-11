@@ -29,9 +29,9 @@ class Cart extends Component {
             if (cart.length === 0 ){
                 return "Your Shopping Cart is Empty"
             } else if (cart.length === 1) {
-                return `There is currently ${cart.length} item in your Cart`
+                return `You have ${cart.length} item in your Cart`
             } else {
-                return `There are currently ${cart.length} items in your Cart`
+                return `You have ${cart.length} items in your Cart`
             }
         }
         return (
