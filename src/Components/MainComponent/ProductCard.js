@@ -14,10 +14,12 @@ class ProductCard extends Component {
         
         const { image , product_full_name, original_price } = this.props.product
         return (
-            <div className="product-card" onClick={this.productRedirect}>
-                <div style={{'height': '200px','backgroundImage': `url(${image})`, 'backgroundSize': 'contain', 'backgroundRepeat': 'no-repeat'}}></div>
-                <div className="product-name"><h1>{product_full_name}</h1></div>
-                <div><h1>USD {original_price}</h1></div>
+            <div className="product-card-container">
+                <div className="product-card" onClick={this.productRedirect}>
+                    <div style={{'height': '200px','backgroundImage': `url(${image})`, 'backgroundSize': 'contain', 'backgroundRepeat': 'no-repeat'}}></div>
+                    <div className="product-name"><h1>{product_full_name}</h1></div>
+                    <div><h1>USD {original_price}</h1></div>
+                </div>
             </div>
             
         )

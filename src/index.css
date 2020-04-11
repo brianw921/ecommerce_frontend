@@ -295,6 +295,10 @@ code {
   width: 100%;
 }
 
+.product-card-container{
+  padding: 20px;
+}
+
 .product-card {
   width: 200px;
   margin: 0 22px;
