@@ -544,7 +544,7 @@ code {
   justify-content: flex-end;
 }
 
-.up-prev-orders{
+.prev-order-container {
   width: 800px;
   background: white;
   border-radius: 10px;
@@ -553,13 +553,17 @@ code {
   padding-right: 100px;
   padding-left: 100px;
   padding-bottom: 100px;
-  
+  border: solid black .5px;
 }
 
+.up-prev-orders{
+  font-family: Arial;
+  
+}
 .up-prev-orders h1{
   display: flex;
   justify-content: flex-end;
-  font-family: Arial;
+  font-size: 24px;
 }
 .user-profile-cart {
   border: solid black .5px;

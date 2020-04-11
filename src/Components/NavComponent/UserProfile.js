@@ -10,16 +10,18 @@ class UserProfile extends Component {
         const { user } = this.props
       
         return (
-            < div className ="user-profile" >
+            
+            <div className ="user-profile" >
                 <h1>Hello {user.name ? user.name: ", welcome to Abibas"}!</h1>
                     <UserProfileCart />
-                <h1>Previous Orders</h1>
-                    {user.orders.map( (order) => {
-                        return <UserProfilePreviousOrders order={order} key={order.id}/>
-                    }
-                    )}
-            
+                    <h1>Previous Orders</h1>
+                    <div className="prev-order-container">
+                        {user.orders.map( (order) => {
+                            return <UserProfilePreviousOrders order={order} key={order.id}/>
+                        })}
+                    </div>
             </div>
+            
         )
     }
 }
