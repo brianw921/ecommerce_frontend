@@ -36,7 +36,7 @@ class Cart extends Component {
         }
         return (
             <div className="cart">
-                <div className="cart-show-page">
+                <div className="cart-container">
                     <h1>{shoppingCartItems()} </h1>
                     <div className="cart-show-page-items">
                         <ol>
