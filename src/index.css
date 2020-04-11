@@ -512,7 +512,8 @@ code {
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
-   /* align-items: center; */
+   
+   align-items: center;
    padding: 30px;
    background-color: #ebebeb;
    font-family: Arial;
@@ -520,6 +521,8 @@ code {
 
 .user-profile h1{
   font-size: 30px;
+
+  
 }
 
 
