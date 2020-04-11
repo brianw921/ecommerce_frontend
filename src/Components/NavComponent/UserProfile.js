@@ -11,9 +11,9 @@ class UserProfile extends Component {
       
         return (
             < div className ="user-profile" >
-                <h1>Hello {user.name ? user.name: ", welcome to Abibas"} !</h1>
+                <h1>Hello {user.name ? user.name: ", welcome to Abibas"}!</h1>
                 <UserProfileCart />
-            <h1>Your Previous Orders</h1>
+            
             {user.orders.map( (order) => {
                 return <UserProfilePreviousOrders order={order} key={order.id}/>
             }
