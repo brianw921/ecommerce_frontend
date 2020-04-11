@@ -44,7 +44,11 @@ class Cart extends Component {
                                 
                                 return <li>
                                 <div onClick={() => this.removeFromCart(cartItem)} id="remove-from-cart">X</div> 
-                                <img src={cartItem.item.image} alt="" className="cart-img"/>- {cartItem.item.product_full_name} USD {cartItem.item.original_price}
+                                    
+                                <img src={cartItem.item.image} alt="" className="cart-img"/>- {cartItem.item.product_full_name} 
+                                    <span>
+                                        USD {cartItem.item.original_price}
+                                    </span>
                                 </li>
                             })}
                         </ol>

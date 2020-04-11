@@ -435,6 +435,7 @@ code {
   position: relative;
   padding-top: 100px;
   padding-right: 100px;
+  padding-left: 100px;
   padding-bottom: 100px;
 }
 
@@ -442,31 +443,28 @@ code {
   font-family: Arial;
   display: flex;
   justify-content: center;
-  padding-left: 10px;
+  
 }
 
 .cart-show-page-items {
   border: solid black .05px;
   text-align: left;
-  padding-left: 50px;
+  padding-left: 100px;
 }
 
 .cart-show-page-items li {
+  font-family: arial;
   display: flex;
-  justify-content: flex;
-  padding-bottom: 40px;
-}
-
-.cart-show-page-items li div{
-  display: flex;
-  justify-content: flex-end;
+  padding-bottom: 30px;
 }
 
 .cart-show-page-items img{
-  border: solid black .5px;
-  
+  border: solid black 1px;
 }
-
+.cart-show-page-items li span{
+  display: flex;
+  justify-content: flex-end;
+}
 .cart-price {
   font-family: Arial;
   display: flex;
@@ -481,6 +479,7 @@ code {
 }
 
 .button button {
+  font-family: Arial;
   color: white;
   border: solid black;
   background: black;
