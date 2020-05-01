@@ -57,7 +57,7 @@ Once an item is clicked, a modal will popup and provide options that will allow 
 ### Filter and Search Bar
 In order to allow for a more convinent user experience, the can filter products to narrow their search for a particular product. Users can filter based on price, gender, and category. They can also search for the product they want within the prospective category after filtering. 
 
-![Abibas Filter and Search](Sort.gif)
+![Abibas Filter and Search](screenshots/Sort.gif)
 
 
 
