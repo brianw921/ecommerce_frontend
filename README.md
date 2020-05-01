@@ -61,6 +61,7 @@ In order to allow for a more convinent user experience, the can filter products 
 
 
 
+
 ### Future features
 * A more comprehensive cart that updates quantity for duplicate items
 * Implement Stripe API to process transactions
