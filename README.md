@@ -1,7 +1,7 @@
 ## Abibas
 
 [View Live Site Here](https://abibas.netlify.com/)
-![Abibas Home Page](screenshots/homepage.png)
+![Abibas Home Page](screenshots/homepage1.png)
 ## About
 Abibas is an e-commerce application where you can purchase sporting goods based the popular Adidas. I choose do E-commerce because the application allows for a shopping experience by offer wider variety of options so that the user. I built Abibas through a 2 week sprint in which I used used Ruby on Rails for the backend, and React, Redux for the frontend. I partitioned it through 6 phrases which includes, designing the schema, implementing user authentication, extracting and displaying inventory information from a known company, handling transactions, and creating filtering and searching functions.
 
