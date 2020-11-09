@@ -12,16 +12,16 @@ class UserProfile extends Component {
         return (
             
             <div className ="user-profile" >
-                    <div>
-                        <h1>Hello {user.name ? user.name: ", welcome to Abibas"}!</h1>
-                    </div>
+                <h1>Hello {user.name ? user.name: ", welcome to Abibas"}!</h1>
                     <div>
                         <UserProfileCart />
                     </div>
-                    <div>
-                        <h1>Previous Orders</h1>
-                    </div>
+                    
+                    
+                        
+                    
                     <div className="prev-order-container">
+                        <h1 >Previous Orders</h1>
                         {user.orders.map( (order) => {
                             return <UserProfilePreviousOrders order={order} key={order.id}/>
                         })}

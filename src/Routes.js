@@ -13,7 +13,7 @@ export default class Routes extends Component {
             
                <Route path="/signup" component={Signup} />
                <Route path="/login" component={Login} />
-               <Route path="/shoe/:id" component={ShoeViewPage } />
+               <Route path="/shoe/:id" component={ShoeViewPage} />
             </Switch>
             </div>
              
