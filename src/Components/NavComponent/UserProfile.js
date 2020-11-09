@@ -12,7 +12,7 @@ class UserProfile extends Component {
         return (
             
             <div className ="user-profile" >
-                <h1>Hello {user.name ? user.name: ", welcome to Abibas"}!</h1>
+                {/* <h1>Hello {user.name ? user.name: ", welcome to Abibas"}!</h1> */}
                     <div>
                         <UserProfileCart />
                     </div>
